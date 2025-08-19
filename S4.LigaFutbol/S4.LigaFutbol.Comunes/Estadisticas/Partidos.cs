@@ -3,6 +3,7 @@
 public class Partidos
 {
     public int IdPartido { get; set; }
+    public int IdTorneo { get; set; }
     public int IdFase { get; set; }
     public int IdJornada { get; set; }
     public int IdEquipoLocal { get; set; }

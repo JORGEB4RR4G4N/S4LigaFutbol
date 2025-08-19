@@ -1,2 +1,6 @@
 ﻿[] Eliminar el SP	SP_FASE_DEL ya que no se debe eliminar los registros
 [] Agregar el habilitado y deshabilitado en SP_FASE_D
+[] De la tabla Jugadores Cambiar el IdJugadores -> IdJugador
+[] agregar el sp SP_JUGADOR_CN para consultar el jugador 
+[] Modificar el sp SP_JUGADORES_DESTACADOS_EQUIPO  para devolver los top 5 goleadores del torneo y no de un equipo, se pretende que se llame "SP_JUGADORES_DESTACADOS_TORNEO"
+[] Agregar el IdTorneo en la table de partdio, asi para poder identificar que partido pertences al torneo y tenere mejor contro, revisar la BD prque no tiene el IdTorneo

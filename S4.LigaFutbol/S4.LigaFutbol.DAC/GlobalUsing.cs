@@ -4,7 +4,9 @@ global using Dapper;
 
 
 global using S4.LigaFutbol.DAC.Catalogos.Interfaces;
-
+global using S4.LigaFutbol.DAC.Operacion.Interfaces;
 
 global using S4.LigaFutbol.Comunes.Catalogos;
 global using S4.LigaFutbol.Comunes.Catalogos.DTO;
+global using S4.LigaFutbol.Comunes.Operacion;
+global using S4.LigaFutbol.Comunes.Estadisticas;

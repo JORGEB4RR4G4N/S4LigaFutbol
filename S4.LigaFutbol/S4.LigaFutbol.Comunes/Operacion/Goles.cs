@@ -2,8 +2,9 @@
 
 public class Goles
 {
-    public int IdGole { get; set; }
+    public int IdGol { get; set; }
     public int IdPartido { get; set; }
+    public int IdJugador { get; set; }
     public int Mintuo { get; set; }
     public bool EsPenalti { get; set; }
     public bool EsFalta { get; set; }

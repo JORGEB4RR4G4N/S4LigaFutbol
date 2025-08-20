@@ -8,5 +8,4 @@ public interface IPartidoDAC
     Task<int> InsertarProgramarPartidos(Partidos partidos, int IdUsuario);
     Task<int> InsertarProgramaPartidosAdicional(Partidos partidos, int IdUsuario);
 
-
 }

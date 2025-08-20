@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Estadisticas\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\S4.LigaFutbol.Comunes\S4.LigaFutbol.Comunes.csproj" />
   </ItemGroup>
 

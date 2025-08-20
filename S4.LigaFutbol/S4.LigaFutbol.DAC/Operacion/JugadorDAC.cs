@@ -72,7 +72,7 @@ public class JugadorDAC : IJugadorDAC
         }
     }
 
-    public async Task<List<Jugadores>> ListaTopGoleadores(int IdTorneo)
+    public async Task<List<Jugadores>> ListaTopGoleadoresPorEquipo(int IdTorneo)
     {
         List<Jugadores> Lista = new List<Jugadores>();
         try

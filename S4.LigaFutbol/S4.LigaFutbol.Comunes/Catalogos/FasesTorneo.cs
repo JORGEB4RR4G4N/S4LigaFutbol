@@ -1,6 +1,6 @@
 ﻿namespace S4.LigaFutbol.Comunes.Catalogos;
 
-public class FasesTorneo
+public class FasesTorneo : Extencion
 {
     public int IdFase { get; set; }
     public int IdTorneo { get; set; }

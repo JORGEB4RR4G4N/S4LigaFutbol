@@ -46,8 +46,10 @@ public class FasesTorneoDAC : IFasesTorneoDAC
             parametros.Add("@p_EquiposQueClasifican", fasesTorneo.EquiposQueClasifican, DbType.Int32);
             parametros.Add("@p_Orden", fasesTorneo.Orden, DbType.Int32);
             parametros.Add("@p_FechaInicio", fasesTorneo.FechaInicio, DbType.DateTime);
+            parametros.Add("@p_Habilitado", fasesTorneo.Habilitado, DbType.Boolean);
+
             parametros.Add("@p_IdUsuario", IdUsuario, DbType.UInt32);
-            var Resultado = await conexion.ExecuteScalarAsync<int>("SP_CAMBIO_IN", parametros, commandType: CommandType.StoredProcedure);
+            var Resultado = await conexion.ExecuteScalarAsync<int>("SP_FASE_ED", parametros, commandType: CommandType.StoredProcedure);
             return Resultado;
         }
     }

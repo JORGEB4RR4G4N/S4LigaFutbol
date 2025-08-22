@@ -1,2 +1,1 @@
-﻿[] Eliminar el SP	SP_FASE_DEL ya que no se debe eliminar los registros
-[] Agregar el habilitado y deshabilitado en SP_FASE_D
+﻿

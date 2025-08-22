@@ -1,8 +1,4 @@
-﻿
-using S4.LigaFutbol.Comunes.Operacion;
-using S4.LigaFutbol.Comunes.Operacion.OperacionDTO;
-
-namespace S4.LigaFutbol.DAC.Operacion;
+﻿namespace S4.LigaFutbol.DAC.Operacion;
 
 public class SancionesDAC : ISancionDAC
 {
@@ -38,7 +34,7 @@ public class SancionesDAC : ISancionDAC
                 var parametros = new DynamicParameters();
                 parametros.Add("@p_IdTorneo", IdTorneo, DbType.Int32);
 
-                Lista = (await conexion.QueryAsync<SancionesEquiposDTO>("SP_SANCIONES_EQUIPO_CN",parametros, commandType: CommandType.StoredProcedure)).ToList();
+                Lista = (await conexion.QueryAsync<SancionesEquiposDTO>("SP_SANCIONES_EQUIPO_CN", parametros, commandType: CommandType.StoredProcedure)).ToList();
             }
 
             return Lista;

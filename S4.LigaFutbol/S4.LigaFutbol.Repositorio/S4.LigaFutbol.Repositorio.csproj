@@ -11,8 +11,4 @@
     <ProjectReference Include="..\S4.LigaFutbol.DAC\S4.LigaFutbol.DAC.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Operacion\Interfaces\" />
-  </ItemGroup>
-
 </Project>

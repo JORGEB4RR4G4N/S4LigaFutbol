@@ -1,4 +1,4 @@
-﻿namespace S4.LigaFutbol.Comunes.Estadisticas;
+﻿namespace S4.LigaFutbol.Comunes.Operacion;
 
 public class Partidos
 {

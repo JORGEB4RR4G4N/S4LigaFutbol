@@ -3,7 +3,6 @@ public interface IJugadorDAC
 {
     Task<int> InsertarJugador(Jugadores jugadores, int IdUsuario);
     Task<bool> ActualizarJugador(Jugadores jugadores, int IdUsuario);
-    Task<List<Jugadores>> ListaJugadorPorEquipo(int IdEquipo);
-    Task<List<Jugadores>> ListaTopGoleadoresPorEquipo(int IdTorneo);
+    Task<List<JugadoresListadoDTO>> ListaJugadorPorTorneoEquipo(int IdTorneo, int? IdEquipo);
     Task<Jugadores> Jugador(int IdJugador);
 }

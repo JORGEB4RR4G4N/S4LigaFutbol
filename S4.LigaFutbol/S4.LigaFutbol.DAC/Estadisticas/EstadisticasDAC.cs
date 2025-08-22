@@ -1,7 +1,4 @@
-﻿using S4.LigaFutbol.Comunes.Operacion;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace S4.LigaFutbol.DAC.Estadisticas;
+﻿namespace S4.LigaFutbol.DAC.Estadisticas;
 
 public class EstadisticasDAC : IEstadisticasDAC
 {
@@ -136,4 +133,27 @@ public class EstadisticasDAC : IEstadisticasDAC
             return Lista;
         }
     }
+
+
+
+    public async Task<List<Jugadores>> ListaTopGoleadoresPorEquipo(int IdEquipo)
+    {
+        List<Jugadores> Lista = new List<Jugadores>();
+        try
+        {
+            using (var conexion = _conexion.ObtieneConexion())
+            {
+                var parametros = new DynamicParameters();
+                parametros.Add("@p_IdEquipo", IdEquipo, DbType.Int32);
+                Lista = (await conexion.QueryAsync<Jugadores>("SP_JUGADORES_DESTACADOS_EQUIPO", parametros, commandType: CommandType.StoredProcedure)).ToList();
+            }
+
+            return Lista;
+        }
+        catch
+        {
+            return Lista;
+        }
+    }
+
 }

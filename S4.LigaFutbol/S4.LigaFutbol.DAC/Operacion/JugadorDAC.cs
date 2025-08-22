@@ -11,7 +11,7 @@ public class JugadorDAC : IJugadorDAC
         using (var conexion = _conexion.ObtieneConexion())
         {
             var parametros = new DynamicParameters();
-            parametros.Add("@p_IdJugador", jugadores.IdJugadores, DbType.Int32);
+            parametros.Add("@p_IdJugador", jugadores.IdJugador, DbType.Int32);
             parametros.Add("@p_IdPosicionJugador", jugadores.IdPosicionJugador, DbType.Int32);
             parametros.Add("@p_Nombre", jugadores.Nombre, DbType.String);
             parametros.Add("@p_Numero", jugadores.Numero, DbType.Int32);
@@ -51,37 +51,17 @@ public class JugadorDAC : IJugadorDAC
         }
     }
 
-
-    public async Task<List<Jugadores>> ListaJugadorPorEquipo(int IdEquipo)
+    public async Task<List<JugadoresListadoDTO>> ListaJugadorPorTorneoEquipo(int IdTorneo, int? IdEquipo)
     {
-        List<Jugadores> Lista = new List<Jugadores>();
-        try
-        {
-            using (var conexion = _conexion.ObtieneConexion())
-            {
-                var parametros = new DynamicParameters();
-                parametros.Add("@p_IdEquipo", IdEquipo, DbType.Int32);
-                Lista = (await conexion.QueryAsync<Jugadores>("SP_JUGADORES_EQUIPO_CN", parametros, commandType: CommandType.StoredProcedure)).ToList();
-            }
-
-            return Lista;
-        }
-        catch
-        {
-            return Lista;
-        }
-    }
-
-    public async Task<List<Jugadores>> ListaTopGoleadoresPorEquipo(int IdTorneo)
-    {
-        List<Jugadores> Lista = new List<Jugadores>();
+        List<JugadoresListadoDTO> Lista = new List<JugadoresListadoDTO>();
         try
         {
             using (var conexion = _conexion.ObtieneConexion())
             {
                 var parametros = new DynamicParameters();
                 parametros.Add("@p_IdTorneo", IdTorneo, DbType.Int32);
-                Lista = (await conexion.QueryAsync<Jugadores>("SP_JUGADORES_DESTACADOS_EQUIPO", parametros, commandType: CommandType.StoredProcedure)).ToList();
+                parametros.Add("@p_IdEquipo", IdEquipo, DbType.Int32);
+                Lista = (await conexion.QueryAsync<JugadoresListadoDTO>("SP_JUGADOR_CN", parametros, commandType: CommandType.StoredProcedure)).ToList();
             }
 
             return Lista;
@@ -91,4 +71,5 @@ public class JugadorDAC : IJugadorDAC
             return Lista;
         }
     }
+
 }

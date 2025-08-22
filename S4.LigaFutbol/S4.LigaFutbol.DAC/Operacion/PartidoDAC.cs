@@ -44,6 +44,7 @@ public class PartidoDAC : IPartidoDAC
         using (var conexion = _conexion.ObtieneConexion())
         {
             var parametros = new DynamicParameters();
+            parametros.Add("@p_IdTorneo", partidos.IdTorneo, DbType.Int32);
             parametros.Add("@p_IdFase", partidos.IdFase, DbType.Int32);
             parametros.Add("@p_IdEquipoLocal", partidos.IdEquipoLocal, DbType.Int32);
             parametros.Add("@p_IdEquipoVisitante", partidos.IdEquipoVisitante, DbType.Int32);

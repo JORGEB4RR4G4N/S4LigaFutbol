@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\S4.LigaFutbol.Comunes\S4.LigaFutbol.Comunes.csproj" />
+    <ProjectReference Include="..\S4.LigaFutbol.DAC\S4.LigaFutbol.DAC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Estadisticas\Interfaces\" />
+    <Folder Include="Operacion\Interfaces\" />
+  </ItemGroup>
+
 </Project>

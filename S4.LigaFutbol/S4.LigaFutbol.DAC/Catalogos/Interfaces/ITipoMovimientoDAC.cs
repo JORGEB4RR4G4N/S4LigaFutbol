@@ -1,6 +1,6 @@
 ﻿namespace S4.LigaFutbol.DAC.Catalogos.Interfaces;
 
-public interface ITiposMovimientosDAC
+public interface ITipoMovimientoDAC
 {
     Task<int> InsertarTiposMovimiento(TiposMovimiento tiposMovimiento, int IdUsuario);
     Task<bool> ActualizarTiposMovimiento(TiposMovimiento tiposMovimiento, int IdUsuario);

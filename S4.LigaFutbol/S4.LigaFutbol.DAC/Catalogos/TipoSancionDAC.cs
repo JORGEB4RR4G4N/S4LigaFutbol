@@ -7,7 +7,7 @@ public class TipoSancionDAC : ITipoSancionDAC
     {
         _conexion = ConnectionString;
     }
-    public async Task<bool> ActualizarFaseTorneo(TiposSancion tiposSancion, int IdUsuario)
+    public async Task<bool> ActualizarTipoSancion(TiposSancion tiposSancion, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
@@ -24,7 +24,7 @@ public class TipoSancionDAC : ITipoSancionDAC
         }
     }
 
-    public async Task<TiposSancion> FaseTorneo(int IdTipoSancion)
+    public async Task<TiposSancion> TipoSancion(int IdTipoSancion)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
@@ -36,7 +36,7 @@ public class TipoSancionDAC : ITipoSancionDAC
         }
     }
 
-    public async Task<int> InsertarFaseTorneo(TiposSancion tiposSancion, int IdUsuario)
+    public async Task<int> InsertarTipoSancion(TiposSancion tiposSancion, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
@@ -51,7 +51,7 @@ public class TipoSancionDAC : ITipoSancionDAC
         }
     }
 
-    public async Task<List<TiposSancion>> ListaFasesTorneo()
+    public async Task<List<TiposSancion>> ListaTipoSancion()
     {
         List<TiposSancion> Lista = new List<TiposSancion>();
         try

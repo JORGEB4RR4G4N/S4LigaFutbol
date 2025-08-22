@@ -1,9 +1,9 @@
 ﻿namespace S4.LigaFutbol.DAC.Catalogos;
 
-public class TiposMovimientoDAC : ITiposMovimientosDAC
+public class TipoMovimientoDAC : ITipoMovimientoDAC
 {
     private readonly Conexion _conexion;
-    public TiposMovimientoDAC(Conexion ConnectionString)
+    public TipoMovimientoDAC(Conexion ConnectionString)
     {
         _conexion = ConnectionString;
     }

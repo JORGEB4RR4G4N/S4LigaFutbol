@@ -8,7 +8,7 @@ public class GolDAC : IGolDAC
         _conexion = ConnectionString;
     }
 
-    public async Task<int> EliminarGol(Goles gol, int IdUsuario)
+    public async Task<bool> EliminarGol(Goles gol, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {

@@ -18,7 +18,8 @@ public class GolDAC : IGolDAC
 
             parametros.Add("@p_IdUsuario", IdUsuario, DbType.UInt32);
             var Resultado = await conexion.ExecuteScalarAsync<int>("SP_GOL_DEL", parametros, commandType: CommandType.StoredProcedure);
-            return Resultado;
+
+            return Resultado > 0;
         }
     }
 

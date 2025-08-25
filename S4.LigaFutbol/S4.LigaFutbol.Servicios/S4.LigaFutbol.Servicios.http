@@ -1,6 +1,6 @@
 @S4.LigaFutbol.Servicios_HostAddress = http://localhost:5199
 
-GET {{S4.LigaFutbol.Servicios_HostAddress}}/weatherforecast/
+GET {{S4.LigaFutbol.Servicios_HostAddress}}/Torneo/
 Accept: application/json
 
 ###

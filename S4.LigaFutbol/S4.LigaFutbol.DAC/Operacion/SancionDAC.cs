@@ -1,9 +1,9 @@
 ﻿namespace S4.LigaFutbol.DAC.Operacion;
 
-public class SancionesDAC : ISancionDAC
+public class SancionDAC : ISancionDAC
 {
     private readonly Conexion _conexion;
-    public SancionesDAC(Conexion ConnectionString)
+    public SancionDAC(Conexion ConnectionString)
     {
         _conexion = ConnectionString;
     }

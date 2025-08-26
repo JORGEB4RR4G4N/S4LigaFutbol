@@ -1,10 +1,10 @@
 ﻿namespace S4.LigaFutbol.Repositorio.Operacion;
 
-public class SancionesRepositorio : ISancionRepositorio
+public class SancionRepositorio : ISancionRepositorio
 {
     private readonly ISancionDAC sancionDAC;
 
-    public SancionesRepositorio(ISancionDAC sancionDAC)
+    public SancionRepositorio(ISancionDAC sancionDAC)
     {
         this.sancionDAC = sancionDAC;
     }

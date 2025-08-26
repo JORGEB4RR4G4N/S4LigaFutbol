@@ -8,6 +8,18 @@ public class SancionRepositorio : ISancionRepositorio
     {
         this.sancionDAC = sancionDAC;
     }
+
+    public async Task<bool> ElimnarSancion(int IdSancion, int IdUsuario)
+    {
+        bool sancionesObjecto = false;
+        var IdSanciones = await sancionDAC.EliminarSancion(IdSancion, IdUsuario);
+
+        if (IdSanciones > 0)
+            sancionesObjecto = true;
+
+        return sancionesObjecto;
+    }
+
     public async Task<bool> InsertarSancion(Sanciones sanciones, int IdUsuario)
     {
         bool sancionesObjecto = false;

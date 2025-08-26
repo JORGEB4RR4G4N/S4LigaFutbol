@@ -1,4 +1,6 @@
-﻿namespace S4.LigaFutbol.DAC.Operacion;
+﻿using S4.LigaFutbol.Comunes.Operacion;
+
+namespace S4.LigaFutbol.DAC.Operacion;
 
 public class PartidoDAC : IPartidoDAC
 {
@@ -88,6 +90,19 @@ public class PartidoDAC : IPartidoDAC
 
             parametros.Add("@p_IdUsuario", IdUsuario, DbType.UInt32);
             var Resultado = await conexion.ExecuteScalarAsync<int>("SP_PROGRAMAR_PARTIDO", parametros, commandType: CommandType.StoredProcedure);
+            return Resultado;
+        }
+    }
+
+    public async Task<List<PartidosCalendarioDTO>> ListaPartidoCalendario(int? IdTorneo, int? IdFase, int? IdEstadoPartido)
+    {
+        using (var conexion = _conexion.ObtieneConexion())
+        {
+            var parametros = new DynamicParameters();
+            parametros.Add("@p_IdTorneo", IdTorneo, DbType.Int32);
+            parametros.Add("@p_IdFase", IdFase, DbType.Int32);
+            parametros.Add("@p_IdEstadoPartido", IdEstadoPartido, DbType.Int32);
+            var Resultado = await conexion.ExecuteScalarAsync<List<PartidosCalendarioDTO>>("SP_PARTIDOS_CALENDARIO_CN", parametros, commandType: CommandType.StoredProcedure);
             return Resultado;
         }
     }

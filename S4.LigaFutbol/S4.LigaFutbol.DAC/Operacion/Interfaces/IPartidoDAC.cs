@@ -7,5 +7,6 @@ public interface IPartidoDAC
     Task<int> InsertarPartidos(Partidos partidos, int IdUsuario);
     Task<int> InsertarProgramarPartidos(Partidos partidos, int IdUsuario);
     Task<int> InsertarProgramaPartidosAdicional(Partidos partidos, int IdUsuario);
+    Task<List<PartidosCalendarioDTO>> ListaPartidoCalendario(int? IdTorneo, int? IdFase, int? IdEstadoPartido);
 
 }

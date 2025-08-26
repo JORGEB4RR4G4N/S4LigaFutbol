@@ -53,4 +53,13 @@ public class PartidoRepositorio : IPartidoRepositorio
 
         return partidosObjecto;
     }
+
+    public async Task<List<PartidosCalendarioDTO>> ListaPartidoCalendario(int? IdTorneo, int? IdFase, int? IdEstadoPartido)
+    {
+        List<PartidosCalendarioDTO> ListapartidosCalendarioDTOs = new List<PartidosCalendarioDTO>();
+
+        ListapartidosCalendarioDTOs = await partidoDAC.ListaPartidoCalendario(IdTorneo, IdFase, IdEstadoPartido);
+
+        return ListapartidosCalendarioDTOs;
+    }
 }

@@ -8,6 +8,19 @@ public class SancionDAC : ISancionDAC
         _conexion = ConnectionString;
     }
 
+    public async Task<int> EliminarSancion(int IdSanciones, int IdUsuario)
+    {
+        using (var conexion = _conexion.ObtieneConexion())
+        {
+            var parametros = new DynamicParameters();
+            parametros.Add("@p_IdPartido", IdSanciones, DbType.Int32);
+
+            parametros.Add("@p_IdUsuario", IdUsuario, DbType.UInt32);
+            var Resultado = await conexion.ExecuteScalarAsync<int>("SP_SANCION_EL", parametros, commandType: CommandType.StoredProcedure);
+            return Resultado;
+        }
+    }
+
     public async Task<int> InsertarSancion(Sanciones sanciones, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())

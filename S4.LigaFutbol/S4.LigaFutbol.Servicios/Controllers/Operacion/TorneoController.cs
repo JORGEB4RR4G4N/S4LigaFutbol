@@ -1,4 +1,4 @@
-﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
+﻿namespace S4.LigaFutbol.Servicios.Controllers.Operacion;
 
 [Route("[controller]")]
 [ApiController]
@@ -40,12 +40,12 @@ public class TorneoController : Controller
         return await torneoRepositorio.InsertarTorneo(torneo, IdUsuario);
     }
     [HttpPut]
-    public async Task<Torneos> ActualizaFalta(Torneos torneo)
+    public async Task<Torneos> ActualizaTorneo(Torneos torneo)
     {
         if (torneo == null)
             throw new Exception("No contienen informacion");
         if (torneo.IdTorneo == 0)
-            throw new Exception("No contienen el IdFalta para modificar el datos");
+            throw new Exception("No contienen el IdTorneo para modificar el datos");
 
         return await torneoRepositorio.ActualizarTorneo(torneo, IdUsuario);
     }

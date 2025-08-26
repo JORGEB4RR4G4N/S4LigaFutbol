@@ -1,0 +1,1 @@
+﻿[] Revisar Sanciones ya que no en caso de equivocarse la sancion del jugador como editarlo o eliminar la Sancion, TEMPORALMENTE SE CREO ESTE  *SP_SANCION_EL* PERO NO EXISTE EN LA BD

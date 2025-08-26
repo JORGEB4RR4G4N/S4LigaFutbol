@@ -7,4 +7,5 @@ public interface IPartidoRepositorio
     Task<bool> InsertarPartidos(Partidos partidos, int IdUsuario);
     Task<bool> InsertarProgramarPartidos(Partidos partidos, int IdUsuario);
     Task<bool> InsertarProgramaPartidosAdicional(Partidos partidos, int IdUsuario);
+    Task<List<PartidosCalendarioDTO>> ListaPartidoCalendario(int? IdTorneo, int? IdFase, int? IdEstadoPartido);
 }

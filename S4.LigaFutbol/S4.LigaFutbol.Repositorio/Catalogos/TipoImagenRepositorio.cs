@@ -2,8 +2,8 @@
 
 public class TipoImagenRepositorio : ITipoImagenRepositorio
 {
-    private readonly ITipoImageneDAC tipoImageneDAC;
-    public TipoImagenRepositorio(ITipoImageneDAC tipoImageneDAC)
+    private readonly ITipoImagenDAC tipoImageneDAC;
+    public TipoImagenRepositorio(ITipoImagenDAC tipoImageneDAC)
     {
         this.tipoImageneDAC = tipoImageneDAC;
     }

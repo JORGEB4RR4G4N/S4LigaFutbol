@@ -1,6 +1,6 @@
 ﻿namespace S4.LigaFutbol.DAC.Catalogos;
 
-public class TipoImagenDAC : ITipoImageneDAC
+public class TipoImagenDAC : ITipoImagenDAC
 {
     private readonly Conexion _conexion;
     public TipoImagenDAC(Conexion ConnectionString)

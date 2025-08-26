@@ -1,6 +1,4 @@
-﻿
-
-namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
+﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
 
 [Route("[controller]")]
 [ApiController]

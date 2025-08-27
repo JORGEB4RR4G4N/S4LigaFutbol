@@ -50,7 +50,6 @@ public class TipoImagenDAC : ITipoImagenDAC
         catch
         {
             return Lista;
-            GC.Collect();
         }
     }
 

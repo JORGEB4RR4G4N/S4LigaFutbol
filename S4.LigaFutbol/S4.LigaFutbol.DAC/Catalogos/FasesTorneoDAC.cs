@@ -70,7 +70,6 @@ public class FasesTorneoDAC : IFasesTorneoDAC
         catch
         {
             return Lista;
-            GC.Collect();
         }
     }
 }

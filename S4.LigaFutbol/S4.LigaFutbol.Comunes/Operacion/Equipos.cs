@@ -7,5 +7,5 @@ public class Equipos : Extencion
     public int IdOrigen { get; set; }
     public int IdImagen { get; set; }
     public string Nombre { get; set; }
-    public int IdUsuraio { get; set; }
+    public int IdUsuario { get; set; }
 }

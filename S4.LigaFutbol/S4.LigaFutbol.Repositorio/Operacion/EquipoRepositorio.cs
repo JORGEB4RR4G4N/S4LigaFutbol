@@ -3,27 +3,32 @@
 public class EquipoRepositorio : IEquipoRepositorio
 {
     private readonly IEquipoDAC equipoDAC;
-    public async Task<Equipos> ActualizarEquipo(Equipos equipos, int IdUsuario)
+    public EquipoRepositorio(IEquipoDAC equipoDAC)
     {
-        Equipos equiposObjecto = new Equipos();
+        this.equipoDAC = equipoDAC;
+    }
+
+    public async Task<EquiposDTO> ActualizarEquipo(Equipos equipos, int IdUsuario)
+    {
+        EquiposDTO equiposObjecto = new EquiposDTO();
         var Actualizo = await equipoDAC.ActualizarEquipo(equipos, IdUsuario);
         if (Actualizo)
-            equiposObjecto = equipos;
+            equiposObjecto = await equipoDAC.Equipo(equipos.IdEquipo);
 
         return equiposObjecto;
     }
 
-    public async Task<Equipos> Equipo(int IdEquipo)
+    public async Task<EquiposDTO> Equipo(int IdEquipo)
     {
-        Equipos equiposObjecto = new Equipos();
+        EquiposDTO equiposObjecto = new EquiposDTO();
         equiposObjecto = await equipoDAC.Equipo(IdEquipo);
 
         return equiposObjecto;
     }
 
-    public async Task<Equipos> InsertarEquipo(Equipos equipos, int IdUsuario)
+    public async Task<EquiposDTO> InsertarEquipo(Equipos equipos, int IdUsuario)
     {
-        Equipos equiposObjecto = new Equipos();
+        EquiposDTO equiposObjecto = new EquiposDTO();
 
         var IdEquipo = await equipoDAC.InsertarEquipo(equipos, IdUsuario);
         if (IdEquipo > 0)
@@ -32,11 +37,10 @@ public class EquipoRepositorio : IEquipoRepositorio
         return equiposObjecto;
     }
 
-    public async Task<List<Equipos>> ListaEquipo()
+    public async Task<List<EquiposDTO>> ListaEquipo(int? IdEquipo, int? IdTorneo)
     {
-        List<Equipos> ListaequiposObjecto = new List<Equipos>();
-        ListaequiposObjecto = await equipoDAC.ListaEquipo();
-
+        List<EquiposDTO> ListaequiposObjecto = new List<EquiposDTO>();
+        ListaequiposObjecto = await equipoDAC.ListaEquipo(IdEquipo, IdTorneo);
         return ListaequiposObjecto;
     }
 }

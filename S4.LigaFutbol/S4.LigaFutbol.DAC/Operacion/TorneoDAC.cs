@@ -53,7 +53,6 @@ public class TorneoDAC : ITorneoDAC
         catch
         {
             return Lista;
-            GC.Collect();
         }
     }
 

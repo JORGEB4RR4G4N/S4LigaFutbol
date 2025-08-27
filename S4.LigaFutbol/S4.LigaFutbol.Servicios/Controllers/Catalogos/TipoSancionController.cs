@@ -15,6 +15,7 @@ public class TipoSancionController : Controller
     }
 
     [HttpGet]
+    [Route("ListaTipoSancion")]
     public async Task<List<TiposSancion>> ListaTipoSancion()
     {
         return await tipoSancionRepositorio.ListaTipoSancion();

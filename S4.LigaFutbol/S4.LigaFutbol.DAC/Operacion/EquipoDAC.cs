@@ -23,15 +23,14 @@ public class EquipoDAC : IEquipoDAC
         }
     }
 
-    public async Task<Equipos> Equipo(int IdEquipo)
+    public async Task<EquiposDTO> Equipo(int IdEquipo)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
 
             var parametros = new DynamicParameters();
             parametros.Add("@p_IdEquipo", IdEquipo, DbType.Int32);
-
-            return await conexion.QueryFirstOrDefaultAsync<Equipos>("SP_EQUIPO_CN", parametros, commandType: CommandType.StoredProcedure);
+            return await conexion.QueryFirstOrDefaultAsync<EquiposDTO>("SP_EQUIPO_CN", parametros, commandType: CommandType.StoredProcedure);
         }
     }
 
@@ -50,15 +49,18 @@ public class EquipoDAC : IEquipoDAC
         }
     }
 
-    public async Task<List<Equipos>> ListaEquipo()
+    public async Task<List<EquiposDTO>> ListaEquipo(int? IdEquipo, int? IdTorneo)
     {
-        List<Equipos> Lista = new List<Equipos>();
+        List<EquiposDTO> Lista = new List<EquiposDTO>();
         try
         {
             using (var conexion = _conexion.ObtieneConexion())
             {
+                var parametros = new DynamicParameters();
+                parametros.Add("@p_IdEquipo", IdEquipo, DbType.Int32);
+                parametros.Add("@p_IdTorneo", IdTorneo, DbType.Int32);
 
-                Lista = (await conexion.QueryAsync<Equipos>("SP_EQUIPO_CT", commandType: CommandType.StoredProcedure)).ToList();
+                Lista = (await conexion.QueryAsync<EquiposDTO>("SP_EQUIPO_CN", parametros, commandType: CommandType.StoredProcedure)).ToList();
             }
 
             return Lista;

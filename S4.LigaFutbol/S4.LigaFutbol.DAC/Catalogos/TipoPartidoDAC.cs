@@ -57,7 +57,6 @@ public class TipoPartidoDAC : ITipoPartidoDAC
         catch
         {
             return Lista;
-            GC.Collect();
         }
     }
 

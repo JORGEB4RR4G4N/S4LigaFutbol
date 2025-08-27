@@ -67,7 +67,6 @@ public class TipoSancionDAC : ITipoSancionDAC
         catch
         {
             return Lista;
-            GC.Collect();
         }
     }
 }

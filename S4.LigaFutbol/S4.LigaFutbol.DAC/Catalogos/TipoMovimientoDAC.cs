@@ -23,7 +23,7 @@ public class TipoMovimientoDAC : ITipoMovimientoDAC
         }
     }
 
-    public async  Task<int> InsertarTiposMovimiento(TiposMovimiento tiposMovimiento, int IdUsuario)
+    public async Task<int> InsertarTiposMovimiento(TiposMovimiento tiposMovimiento, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
@@ -52,7 +52,6 @@ public class TipoMovimientoDAC : ITipoMovimientoDAC
         catch
         {
             return Lista;
-            GC.Collect();
         }
     }
 

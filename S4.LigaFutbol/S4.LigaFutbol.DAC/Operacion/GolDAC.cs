@@ -8,13 +8,13 @@ public class GolDAC : IGolDAC
         _conexion = ConnectionString;
     }
 
-    public async Task<bool> EliminarGol(Goles gol, int IdUsuario)
+    public async Task<bool> EliminarGol(int IdGol, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
 
             var parametros = new DynamicParameters();
-            parametros.Add("@p_IdGol", gol.IdPartido, DbType.Int32);
+            parametros.Add("@p_IdGol", IdGol, DbType.Int32);
 
             parametros.Add("@p_IdUsuario", IdUsuario, DbType.UInt32);
             var Resultado = await conexion.ExecuteScalarAsync<int>("SP_GOL_DEL", parametros, commandType: CommandType.StoredProcedure);

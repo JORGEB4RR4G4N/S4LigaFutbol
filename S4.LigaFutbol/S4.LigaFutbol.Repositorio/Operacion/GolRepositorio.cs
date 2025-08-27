@@ -7,9 +7,9 @@ public class GolRepositorio : IGolRepositorio
         this.golDAC = golDAC;
     }
 
-    public async Task<bool> EliminarGol(Goles gol, int IdUsuario)
+    public async Task<bool> EliminarGol(int IdGol, int IdUsuario)
     {
-        return await golDAC.EliminarGol(gol, IdUsuario);
+        return await golDAC.EliminarGol(IdGol, IdUsuario);
 
     }
 

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.Repositorio",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.Servicios", "S4.LigaFutbol.Servicios\S4.LigaFutbol.Servicios.csproj", "{BA4FC4A5-F988-40B3-813D-9CB890B5709C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.FrontEnd", "S4.LigaFutbol.FrontEnd\S4.LigaFutbol.FrontEnd.csproj", "{7A74421F-C634-4310-AAD1-D54057E1CB8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BA4FC4A5-F988-40B3-813D-9CB890B5709C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA4FC4A5-F988-40B3-813D-9CB890B5709C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA4FC4A5-F988-40B3-813D-9CB890B5709C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A74421F-C634-4310-AAD1-D54057E1CB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A74421F-C634-4310-AAD1-D54057E1CB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A74421F-C634-4310-AAD1-D54057E1CB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A74421F-C634-4310-AAD1-D54057E1CB8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

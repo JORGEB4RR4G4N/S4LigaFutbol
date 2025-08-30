@@ -1,10 +1,3 @@
-using Blazorise;
-using Blazorise.FluentUI2;
-using Blazorise.Icons.FluentUI;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using S4.LigaFutbol.FrontEnd;
-
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");

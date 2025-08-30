@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.19" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\S4.LigaFutbol.Comunes\S4.LigaFutbol.Comunes.csproj" />
+  </ItemGroup>
+
 </Project>

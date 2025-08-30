@@ -1,0 +1,47 @@
+﻿@page "/"
+@layout InicioSesionLayout
+
+<Div>
+    <Row Height="Height.Px(300)" Width="Width.Is100">
+
+    </Row>
+    <Row Width="Width.Is100">
+        <Column ColumnSize="ColumnSize.Is5.Is5.WithOffset">
+
+
+            <Card Width="Width.Is50">
+                <CardBody>
+                    <CardTitle Size="3">
+                        Inicio Sesion
+                    </CardTitle>
+                    <CardText>
+                        <Validations Mode="ValidationMode.Manual" @ref="validations" Model="@usuarioAccesoObject">
+                            <Row Margin="Margin.Is2">
+                                <Validation Validator="ValidationRule.IsNotEmpty">
+                                    <TextEdit @bind-Text="usuarioAccesoObject.Usuario" Placeholder="Usuario" Width="Width.Is25">
+                                        <Feedback>
+                                            <ValidationError>Ingrese Usuario Correctamente</ValidationError>
+                                        </Feedback>
+                                    </TextEdit>
+                                </Validation>
+                            </Row>
+                            <br />
+                            <Row Margin="Margin.Is2">
+                                <Validation Validator="ValidationRule.IsNotEmpty">
+                                    <TextEdit @bind-Text="usuarioAccesoObject.ClaveAcceso" Role="TextRole.Password" Placeholder="Contraseña" Width="Width.Is50">
+                                        <Feedback>
+                                            <ValidationError>Ingrese contraseña correctamente</ValidationError>
+                                        </Feedback>
+                                    </TextEdit>
+                                </Validation>
+                            </Row>
+                            <br />
+                            <Button Color="Color.Primary" Clicked="ValidarUsuario">Submit</Button>
+                        </Validations>
+                    </CardText>
+                </CardBody>
+            </Card>
+        </Column>
+    </Row>
+
+</Div>

@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -11,6 +11,7 @@
     <PackageReference Include="Blazorise.Icons.FluentUI" Version="1.8.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.19" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.19" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,9 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Servicios\ServcioOperacion\" />
-    <Folder Include="Servicios\ServcioEstadistica\" />
-    <Folder Include="Servicios\ServcioCatalogo\" />
+    <Folder Include="ServiciosCliente\ServcioClienteOperacion\" />
+    <Folder Include="ServiciosCliente\ServcioClienteEstadistica\" />
   </ItemGroup>
 
 </Project>

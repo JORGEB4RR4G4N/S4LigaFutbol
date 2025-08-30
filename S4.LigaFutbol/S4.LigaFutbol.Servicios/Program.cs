@@ -40,6 +40,7 @@ builder.Services.addTorneoExtension();
 
 
 var app = builder.Build();
+app.UseCors(c => c.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod()); //--------------->>> Esta Linea permite acceder a la api desde otro servicios
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

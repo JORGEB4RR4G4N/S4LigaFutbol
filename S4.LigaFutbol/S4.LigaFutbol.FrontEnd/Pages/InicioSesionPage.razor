@@ -9,31 +9,36 @@
         <Column ColumnSize="ColumnSize.Is5.Is5.WithOffset">
 
 
-            <Card Width="Width.Is50">
+            <Card Width="Width.Is50.OnDesktop.Is50.OnMobile.Is100">
                 <CardBody>
                     <CardTitle Size="3">
                         Inicio Sesion
                     </CardTitle>
                     <CardText>
                         <Validations Mode="ValidationMode.Manual" @ref="validations" Model="@usuarioAccesoObject">
-                            <Row Margin="Margin.Is2">
-                                <Validation Validator="ValidationRule.IsNotEmpty">
-                                    <TextEdit @bind-Text="usuarioAccesoObject.Usuario" Placeholder="Usuario" Width="Width.Is25">
-                                        <Feedback>
-                                            <ValidationError>Ingrese Usuario Correctamente</ValidationError>
-                                        </Feedback>
-                                    </TextEdit>
-                                </Validation>
+                            <Row Margin="Margin.Is2.OnDesktop.Is2.OnMobile.Is0">
+                                <Column ColumnSize="ColumnSize.Is12.OnDesktop.Is12.OnMobile.Is12">
+                                    <Validation Validator="ValidationRule.IsNotEmpty">
+                                        <TextEdit @bind-Text="usuarioAccesoObject.Usuario" Placeholder="Usuario" Width="Width.Is25">
+                                            <Feedback>
+                                                <ValidationError>Ingrese Usuario Correctamente</ValidationError>
+                                            </Feedback>
+                                        </TextEdit>
+                                    </Validation>
+                                </Column>
                             </Row>
                             <br />
-                            <Row Margin="Margin.Is2">
-                                <Validation Validator="ValidationRule.IsNotEmpty">
-                                    <TextEdit @bind-Text="usuarioAccesoObject.ClaveAcceso" Role="TextRole.Password" Placeholder="Contraseña" Width="Width.Is50">
-                                        <Feedback>
-                                            <ValidationError>Ingrese contraseña correctamente</ValidationError>
-                                        </Feedback>
-                                    </TextEdit>
-                                </Validation>
+                            <Row Margin="Margin.Is2.OnDesktop.Is2.OnMobile.Is0">
+
+                                <Column ColumnSize="ColumnSize.Is12.OnDesktop.Is12.OnMobile.Is12">
+                                    <Validation Validator="ValidationRule.IsNotEmpty">
+                                        <TextEdit @bind-Text="usuarioAccesoObject.ClaveAcceso" Role="TextRole.Password" Placeholder="Contraseña" Width="Width.Is50">
+                                            <Feedback>
+                                                <ValidationError>Ingrese contraseña correctamente</ValidationError>
+                                            </Feedback>
+                                        </TextEdit>
+                                    </Validation>
+                                </Column>
                             </Row>
                             <br />
                             <Button Color="Color.Primary" Clicked="ValidarUsuario">Submit</Button>

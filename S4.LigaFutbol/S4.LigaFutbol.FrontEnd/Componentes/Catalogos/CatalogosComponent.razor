@@ -1,0 +1,31 @@
+﻿<Column ColumnSize="ColumnSize.Is12">
+    <Card Height="Height.Px(500)">
+        <CardHeader>
+            <CardTitle>Catalogos </CardTitle>
+        </CardHeader>
+        <CardBody>
+            <Tabs SelectedTab="@selectedTab" SelectedTabChanged="@OnSelectedTabChanged" TabPosition="TabPosition.Top">
+                <Items>
+                    <Tab Name="home">Tipo Amonestaciones</Tab>
+                    <Tab Name="profile">Tipo Partido</Tab>
+                    <Tab Name="messages">Tipo Gol</Tab>
+                    <Tab Name="settings">Tipo Imagen</Tab>
+                </Items>
+                <Content>
+                    <TabPanel Name="home">
+                        <GridCatalogosComponent />
+                    </TabPanel>
+                    <TabPanel Name="profile">
+                        <GridCatalogosComponent />
+                    </TabPanel>
+                    <TabPanel Name="messages">
+                        <GridCatalogosComponent />
+                    </TabPanel>
+                    <TabPanel Name="settings">
+                        <GridCatalogosComponent />
+                    </TabPanel>
+                </Content>
+            </Tabs>
+        </CardBody>
+    </Card>
+</Column>

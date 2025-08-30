@@ -17,4 +17,10 @@
     <ProjectReference Include="..\S4.LigaFutbol.Comunes\S4.LigaFutbol.Comunes.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Servicios\ServcioOperacion\" />
+    <Folder Include="Servicios\ServcioEstadistica\" />
+    <Folder Include="Servicios\ServcioCatalogo\" />
+  </ItemGroup>
+
 </Project>

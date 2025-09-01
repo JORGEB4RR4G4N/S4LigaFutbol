@@ -1,6 +1,8 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Operacion;
-
-public class EquipoController : Controller
+[Area("Operacion")]
+[ApiController]
+[Route("[area]/[controller]")]
+public class EquipoController : ControllerBase
 {
     private readonly ILogger<EquipoController> logger;
     private readonly IEquipoRepositorio equipoRepositorio;

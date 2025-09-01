@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton(new Conexion(builder.Configuration.GetConnectionString("SQL")!));
 
 //Clases Extensiones para cada Clase
-//Clases
+//Catalogos
 builder.Services.addFaseTorneoExtension();
 builder.Services.addPosicionTorneoExtension();
 builder.Services.addTipoImagenExtension();

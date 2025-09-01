@@ -1,7 +1,7 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Operacion;
-
-[Route("[controller]")]
+[Area("Operacion")]
 [ApiController]
+[Route("[area]/[controller]")]
 public class TorneoController : Controller
 {
     private readonly ILogger<TorneoController> logger;

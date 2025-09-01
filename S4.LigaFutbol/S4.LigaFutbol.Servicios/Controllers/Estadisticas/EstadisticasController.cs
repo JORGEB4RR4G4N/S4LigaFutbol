@@ -1,6 +1,6 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Estadisticas;
 
-public class EstadisticasController : Controller
+public class EstadisticasController : ControllerBase
 {
 
     private readonly ILogger<EstadisticasController> logger;

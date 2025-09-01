@@ -1,7 +1,8 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
-[Route("[controller]")]
+[Area("CatalogosGenerales")]
 [ApiController]
-public class PosicionJugadorController : Controller
+[Route("[area]/[controller]")]
+public class PosicionJugadorController : ControllerBase
 {
     private readonly ILogger<PosicionJugadorController> logger;
     private readonly IPosicionJugadorRepositorio posicionJugadorRepositorio;

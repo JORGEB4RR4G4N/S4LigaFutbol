@@ -1,8 +1,8 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
-
-[Route("[controller]")]
+[Area("CatalogosGenerales")]
 [ApiController]
-public class FasesTorneoController : Controller
+[Route("[area]/[controller]")]
+public class FasesTorneoController : ControllerBase
 {
     private readonly ILogger<FasesTorneoController> logger;
     private readonly IFasesTorneoRepositorio fasesTorneoRepositorio;

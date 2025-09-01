@@ -1,7 +1,8 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
-[Route("[controller]")]
+[Area("CatalogosGenerales")]
 [ApiController]
-public class TipoMovimientoController : Controller
+[Route("[area]/[controller]")]
+public class TipoMovimientoController : ControllerBase
 {
     private readonly ILogger<TipoMovimientoController> logger;
     private readonly ITipoMovimientoRepositorio tipoMovimientoRepositorio;

@@ -1,7 +1,8 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
-[Route("[controller]")]
+[Area("CatalogosGenerales")]
 [ApiController]
-public class TipoImagenController : Controller
+[Route("[area]/[controller]")]
+public class TipoImagenController : ControllerBase
 {
     private readonly ILogger<TipoImagenController> logger;
     private readonly ITipoImagenRepositorio tipoImagenRepositorio;

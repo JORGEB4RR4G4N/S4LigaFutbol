@@ -1,8 +1,8 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
-
-[Route("[controller]")]
+[Area("CatalogosGenerales")]
 [ApiController]
-public class TipoPartidoController : Controller
+[Route("[area]/[controller]")]
+public class TipoPartidoController : ControllerBase
 {
     private readonly ILogger<TipoPartidoController> logger;
     private readonly ITipoPartidoRepositorio tipoPartidoRepositorio;

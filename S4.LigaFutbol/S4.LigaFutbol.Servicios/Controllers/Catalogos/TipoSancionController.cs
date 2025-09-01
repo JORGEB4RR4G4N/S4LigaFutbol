@@ -1,7 +1,8 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
-[Route("[controller]")]
+[Area("CatalogosGenerales")]
 [ApiController]
-public class TipoSancionController : Controller
+[Route("[area]/[controller]")] 
+public class TipoSancionController : ControllerBase
 {
     private readonly ILogger<TipoSancionController> logger;
     private readonly ITipoSancionRepositorio tipoSancionRepositorio;

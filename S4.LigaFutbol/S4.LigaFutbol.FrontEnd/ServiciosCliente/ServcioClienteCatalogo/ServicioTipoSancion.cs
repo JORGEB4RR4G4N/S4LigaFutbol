@@ -18,13 +18,14 @@ public class ServicioTipoSancion : IServicioTipoSancion
         throw new NotImplementedException();
     }
 
-    public Task<List<TiposSancion>> ListaTipoSancion()
+    public async Task<List<TiposSancion>> ListaTipoSancion()
     {
-        throw new NotImplementedException();
+        return await httpClient.GetFromJsonAsync<List<TiposSancion>>($"TipoSancion/ListaTipoSancion");
+
     }
 
     public async Task<TiposSancion> TipoSancion(int IdTipoSancion)
     {
-        return await httpClient.GetFromJsonAsync<TiposSancion>("API");
+        return await httpClient.GetFromJsonAsync<TiposSancion>($"TipoSancion/{IdTipoSancion}");
     }
 }

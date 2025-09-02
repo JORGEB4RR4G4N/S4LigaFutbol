@@ -10,23 +10,26 @@ builder.Services
     .AddFluentUIIcons();
 
 
+
+// Asegura que las bases terminan en '/'
+var cfg = builder.Configuration;
+string EnsureSlash(string s) => string.IsNullOrWhiteSpace(s) ? s : (s.EndsWith("/") ? s : s + "/");
 // Obtener configuración
-var configuration = builder.Configuration;
-var rutaApi = configuration["RutaApi"];
+var rutaApi = EnsureSlash(cfg["RutaApi"] ?? throw new InvalidOperationException("Falta 'RutaApi'"));
+var baseApi = new Uri(rutaApi);
 
-if (string.IsNullOrEmpty(rutaApi))
-{
-    throw new InvalidOperationException("La configuración 'RutaApi' no está definida en appsettings.json");
-}
+// Construye URIs hijas con Uri, no con concatenación de strings
+Uri apiUriCatalogos = new Uri(baseApi, EnsureSlash(cfg["Catalogos"]));
+Uri apiUriEstadisticas = new Uri(baseApi, EnsureSlash(cfg["Estadisticas"]));
+Uri apiUriOperacion = new Uri(baseApi, EnsureSlash(cfg["Operacion"]));
 
-// Validar que la URL sea válida
-if (!Uri.TryCreate(rutaApi, UriKind.Absolute, out var apiUri))
-{
-    throw new InvalidOperationException($"La ruta de API '{rutaApi}' no es una URL válida");
-}
+// Validaciones
+if (!apiUriCatalogos.IsAbsoluteUri) throw new InvalidOperationException("'Catalogos' no generó una URL absoluta");
+if (!apiUriEstadisticas.IsAbsoluteUri) throw new InvalidOperationException("'Estadisticas' no generó una URL absoluta");
+if (!apiUriOperacion.IsAbsoluteUri) throw new InvalidOperationException("'Operacion' no generó una URL absoluta");
 
-// Registrar servicios de catálogos
-builder.Services.AddClientesCatalogos(apiUri);
+// Registrar clientes
+builder.Services.AddClientesCatalogos(apiUriCatalogos);
 
 
 await builder.Build().RunAsync();

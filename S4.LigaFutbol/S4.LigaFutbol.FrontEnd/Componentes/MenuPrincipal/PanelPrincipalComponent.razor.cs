@@ -1,18 +1,16 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+namespace S4.LigaFutbol.FrontEnd.Componentes.MenuPrincipal;
 
-
-namespace S4.LigaFutbol.FrontEnd.Componentes.MenuPrincipal
+public partial class PanelPrincipalComponent
 {
-    public partial class PanelPrincipalComponent
-    {
-        public PanelPrincipalComponent()
-        {
+    [Inject] IServicioTipoSancion servicioTipoSancion { get; set; }
 
-        }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var lista = await servicioTipoSancion.ListaTipoSancion();
+        Console.WriteLine(lista.FirstOrDefault().Descripcion);
     }
 }

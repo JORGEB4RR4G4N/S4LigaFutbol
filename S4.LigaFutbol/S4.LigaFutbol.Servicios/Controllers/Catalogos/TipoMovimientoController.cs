@@ -1,5 +1,5 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Catalogos;
-[Area("CatalogosGenerales")]
+[Area("CatalogosGeneral")]
 [ApiController]
 [Route("[area]/[controller]")]
 public class TipoMovimientoController : ControllerBase

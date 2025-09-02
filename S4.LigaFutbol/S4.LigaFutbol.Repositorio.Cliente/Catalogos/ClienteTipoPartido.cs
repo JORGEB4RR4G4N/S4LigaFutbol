@@ -2,23 +2,29 @@
 
 public class ClienteTipoPartido : IClienteTipoPartido
 {
-    public Task<TiposPartido> ActualizarTipoPartido(TiposPartido tiposPartido, int IdUsuario)
+    private readonly HttpClient httpClient;
+
+    public ClienteTipoPartido(HttpClient httpClient)
     {
-        throw new NotImplementedException();
+        this.httpClient = httpClient;
+    }
+    public async Task<TiposPartido> ActualizarTipoPartido(TiposPartido tiposPartido)
+    {
+        return await httpClient.PutAndReadJsonAsync("TiposPartido", tiposPartido);
     }
 
-    public Task<TiposPartido> InsertarTipoPartido(TiposPartido tiposPartido, int IdUsuario)
+    public async Task<TiposPartido> InsertarTipoPartido(TiposPartido tiposPartido)
     {
-        throw new NotImplementedException();
+        return await httpClient.PostAndReadJsonAsync("TiposPartido", tiposPartido);
     }
 
-    public Task<List<TiposPartido>> ListaTipoPartido()
+    public async Task<List<TiposPartido>> ListaTipoPartido()
     {
-        throw new NotImplementedException();
+        return await httpClient.GetFromJsonAsync<List<TiposPartido>>($"FasesTorneo/ListaTipoPartido");
     }
 
-    public Task<TiposPartido> TipoPartido(int IdTipoPartido)
+    public async Task<TiposPartido> TipoPartido(int IdTipoPartido)
     {
-        throw new NotImplementedException();
+        return await httpClient.GetFromJsonAsync<TiposPartido>($"FasesTorneo/{IdTipoPartido}");
     }
 }

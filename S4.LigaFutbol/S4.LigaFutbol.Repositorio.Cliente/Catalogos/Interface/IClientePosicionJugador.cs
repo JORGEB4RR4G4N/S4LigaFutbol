@@ -1,6 +1,6 @@
-﻿namespace S4.LigaFutbol.FrontEnd.ServiciosCliente.ServcioClienteCatalogo.Interfaces;
+﻿namespace S4.LigaFutbol.Repositorio.Cliente.Catalogos.Interface;
 
-public interface IServicioPosicionJugador
+public interface IClientePosicionJugador
 {
     Task<PosicionesJugador> InsertarPosicionesJugador(PosicionesJugador posicionesJugador, int IdUsuario);
     Task<PosicionesJugador> ActualizarPosicionesJugador(PosicionesJugador posicionesJugador, int IdUsuario);

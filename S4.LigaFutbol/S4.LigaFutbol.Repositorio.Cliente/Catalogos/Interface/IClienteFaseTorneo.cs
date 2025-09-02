@@ -1,5 +1,5 @@
-﻿namespace S4.LigaFutbol.FrontEnd.ServiciosCliente.ServcioClienteCatalogo.Interfaces;
-public interface IServicioFaseTorneo
+﻿namespace S4.LigaFutbol.Repositorio.Cliente.Catalogos.Interface;
+public interface IClienteFaseTorneo
 {
     Task<FasesTorneo> InsertarFaseTorneo(FasesTorneo fasesTorneo, int IdUsuario);
     Task<FasesTorneo> ActualizarFaseTorneo(FasesTorneo fasesTorneo, int IdUsuario);

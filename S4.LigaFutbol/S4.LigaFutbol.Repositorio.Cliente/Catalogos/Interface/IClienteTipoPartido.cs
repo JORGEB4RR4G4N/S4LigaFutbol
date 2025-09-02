@@ -1,5 +1,5 @@
-﻿namespace S4.LigaFutbol.FrontEnd.ServiciosCliente.ServcioClienteCatalogo.Interfaces;
-public interface IServicioTipoPartido
+﻿namespace S4.LigaFutbol.Repositorio.Cliente.Catalogos.Interface;
+public interface IClienteTipoPartido
 {
     Task<TiposPartido> InsertarTipoPartido(TiposPartido tiposPartido, int IdUsuario);
     Task<TiposPartido> ActualizarTipoPartido(TiposPartido tiposPartido, int IdUsuario);

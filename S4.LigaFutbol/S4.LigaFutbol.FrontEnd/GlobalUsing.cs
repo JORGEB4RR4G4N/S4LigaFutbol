@@ -5,12 +5,10 @@ global using Blazorise.Icons.FluentUI;
 global using Microsoft.AspNetCore.Components.Web;
 global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using S4.LigaFutbol.FrontEnd;
-global using System.Net.Http.Json;
-
-global using S4.LigaFutbol.FrontEnd.ServiciosCliente.ServcioClienteCatalogo.Extenciones;
-global using S4.LigaFutbol.FrontEnd.ServiciosCliente.ServcioClienteCatalogo.Interfaces;
-
 
 global using S4.LigaFutbol.Comunes.Accesso;
-global using S4.LigaFutbol.Comunes.Catalogos;
-global using S4.LigaFutbol.Comunes.Catalogos.DTO;
+
+global using S4.LigaFutbol.Repositorio.Cliente.Catalogos.Extension;
+global using S4.LigaFutbol.Repositorio.Cliente.Catalogos.Interface;
+
+

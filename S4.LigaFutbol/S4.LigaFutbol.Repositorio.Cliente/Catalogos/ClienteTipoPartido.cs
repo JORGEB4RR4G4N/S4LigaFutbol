@@ -1,7 +1,6 @@
-﻿
-namespace S4.LigaFutbol.FrontEnd.ServiciosCliente.ServcioClienteCatalogo.Interfaces;
+﻿namespace S4.LigaFutbol.Repositorio.Cliente.Catalogos;
 
-public class ServicioTipoPartido : IServicioTipoPartido
+public class ClienteTipoPartido : IClienteTipoPartido
 {
     public Task<TiposPartido> ActualizarTipoPartido(TiposPartido tiposPartido, int IdUsuario)
     {

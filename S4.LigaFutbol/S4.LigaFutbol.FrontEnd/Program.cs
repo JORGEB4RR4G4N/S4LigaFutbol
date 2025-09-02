@@ -11,17 +11,18 @@ builder.Services
 
 
 
+
+var config = builder.Configuration;
 // Asegura que las bases terminan en '/'
-var cfg = builder.Configuration;
 string EnsureSlash(string s) => string.IsNullOrWhiteSpace(s) ? s : (s.EndsWith("/") ? s : s + "/");
 // Obtener configuración
-var rutaApi = EnsureSlash(cfg["RutaApi"] ?? throw new InvalidOperationException("Falta 'RutaApi'"));
+var rutaApi = EnsureSlash(config["RutaApi"] ?? throw new InvalidOperationException("Falta 'RutaApi'"));
 var baseApi = new Uri(rutaApi);
 
 // Construye URIs hijas con Uri, no con concatenación de strings
-Uri apiUriCatalogos = new Uri(baseApi, EnsureSlash(cfg["Catalogos"]));
-Uri apiUriEstadisticas = new Uri(baseApi, EnsureSlash(cfg["Estadisticas"]));
-Uri apiUriOperacion = new Uri(baseApi, EnsureSlash(cfg["Operacion"]));
+Uri apiUriCatalogos = new Uri(baseApi, EnsureSlash(config["Catalogos"]));
+Uri apiUriEstadisticas = new Uri(baseApi, EnsureSlash(config["Estadisticas"]));
+Uri apiUriOperacion = new Uri(baseApi, EnsureSlash(config["Operacion"]));
 
 // Validaciones
 if (!apiUriCatalogos.IsAbsoluteUri) throw new InvalidOperationException("'Catalogos' no generó una URL absoluta");
@@ -29,6 +30,7 @@ if (!apiUriEstadisticas.IsAbsoluteUri) throw new InvalidOperationException("'Est
 if (!apiUriOperacion.IsAbsoluteUri) throw new InvalidOperationException("'Operacion' no generó una URL absoluta");
 
 // Registrar clientes
+//Catalogos
 builder.Services.AddClientesCatalogos(apiUriCatalogos);
 
 

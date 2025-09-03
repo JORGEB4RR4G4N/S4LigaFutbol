@@ -2,7 +2,7 @@
 
 public static class HttpClientesOperacion
 {
-    public static IServiceCollection AddClientesCatalogos(this IServiceCollection services, Uri uriCatalogos)
+    public static IServiceCollection AddClientesOperacion(this IServiceCollection services, Uri uriCatalogos)
     {
         services.AddHttpClient<IClienteEquipo, ClienteEquipo>((sp, client) => { client.BaseAddress = uriCatalogos; });
         services.AddHttpClient<IClienteGol, ClienteGol>((sp, client) => { client.BaseAddress = uriCatalogos; });

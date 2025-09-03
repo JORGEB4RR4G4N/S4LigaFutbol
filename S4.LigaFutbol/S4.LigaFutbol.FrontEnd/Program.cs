@@ -32,6 +32,8 @@ if (!apiUriOperacion.IsAbsoluteUri) throw new InvalidOperationException("'Operac
 // Registrar clientes
 //Catalogos
 builder.Services.AddClientesCatalogos(apiUriCatalogos);
+builder.Services.AddClientesEstadistica(apiUriEstadisticas);
+builder.Services.AddClientesOperacion(apiUriOperacion);
 
 
 await builder.Build().RunAsync();

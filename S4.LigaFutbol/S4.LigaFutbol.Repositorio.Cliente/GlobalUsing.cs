@@ -10,3 +10,11 @@ global using S4.LigaFutbol.Repositorio.Cliente.Helper; //Este es importante ya q
 
 global using S4.LigaFutbol.Comunes.Catalogos;
 global using S4.LigaFutbol.Comunes.Catalogos.DTO;
+
+global using S4.LigaFutbol.Comunes.Estadisticas.EstadisticasDTO;
+global using S4.LigaFutbol.Comunes.Operacion;
+global using S4.LigaFutbol.Repositorio.Cliente.Estadisticas.Interfaces;
+global using S4.LigaFutbol.Comunes.Operacion.OperacionDTO;
+global using S4.LigaFutbol.Repositorio.Cliente.Operacion.Interfaces;
+
+

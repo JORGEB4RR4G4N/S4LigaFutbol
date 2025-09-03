@@ -56,4 +56,8 @@ public static class HttpJsonConvenienceExtensions
     public static Task<T> PutAndReadJsonAsync<T>(this HttpClient http, string url, T body, JsonSerializerOptions jsonOptions = null, CancellationToken ct = default) => http.PutJsonAsync<T, T>(url, body, jsonOptions, ct);
 
 
+
+    public static Task<TResponse> PostAndReadJsonDtoAsync<TResponse>(this HttpClient http, string url, object body, JsonSerializerOptions jsonOptions = null, CancellationToken ct = default) => http.PostJsonAsync<object, TResponse>(url, body, jsonOptions, ct);
+    public static Task<TResponse> PutAndReadJsonDtoAsync<TResponse>(this HttpClient http, string url, object body, JsonSerializerOptions jsonOptions = null, CancellationToken ct = default) => http.PutJsonAsync<object, TResponse>(url, body, jsonOptions, ct);
+
 }

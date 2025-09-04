@@ -2,9 +2,9 @@
 
 public interface IPosicionJugadorDAC
 {
-    Task<int> InsertarPosicionesJugador(PosicionesJugador posicionesJugador, int IdUsuario);
-    Task<bool> ActualizarPosicionesJugador(PosicionesJugador posicionesJugador, int IdUsuario);
-    Task<List<PosicionesJugador>> ListaPosicionesJugador();
-    Task<PosicionesJugador> PosicionesJugador(int IdPosicionJuagdor);
-    Task<bool> EliminarPosicionesJugador(int IdPosicionJuagdor, int IdUsuario);
+    Task<int> InsertarPosicionJugador(PosicionesJugador posicionesJugador, int IdUsuario);
+    Task<bool> ActualizarPosicionJugador(PosicionesJugador posicionesJugador, int IdUsuario);
+    Task<List<PosicionesJugador>> ListaPosicionJugador();
+    Task<PosicionesJugador> PosicionJugador(int IdPosicionJuagdor);
+    Task<bool> EliminarPosicionJugador(int IdPosicionJuagdor, int IdUsuario);
 }

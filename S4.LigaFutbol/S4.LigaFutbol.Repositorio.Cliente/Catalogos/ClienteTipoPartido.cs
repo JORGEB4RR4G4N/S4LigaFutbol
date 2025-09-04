@@ -10,21 +10,21 @@ public class ClienteTipoPartido : IClienteTipoPartido
     }
     public async Task<TiposPartido> ActualizarTipoPartido(TiposPartido tiposPartido)
     {
-        return await httpClient.PutAndReadJsonAsync("TiposPartido", tiposPartido);
+        return await httpClient.PutAndReadJsonAsync("TipoPartido", tiposPartido);
     }
 
     public async Task<TiposPartido> InsertarTipoPartido(TiposPartido tiposPartido)
     {
-        return await httpClient.PostAndReadJsonAsync("TiposPartido", tiposPartido);
+        return await httpClient.PostAndReadJsonAsync("TipoPartido", tiposPartido);
     }
 
-    public async Task<List<TiposPartido>> ListaTipoPartido()
+    public async Task<List<TiposPartido>> ListaTipoPartidos()
     {
-        return await httpClient.GetFromJsonAsync<List<TiposPartido>>($"FasesTorneo/ListaTipoPartido");
+        return await httpClient.GetFromJsonAsync<List<TiposPartido>>($"TipoPartido/ListaTipoPartidos");
     }
 
     public async Task<TiposPartido> TipoPartido(int IdTipoPartido)
     {
-        return await httpClient.GetFromJsonAsync<TiposPartido>($"FasesTorneo/{IdTipoPartido}");
+        return await httpClient.GetFromJsonAsync<TiposPartido>($"TipoPartido/{IdTipoPartido}");
     }
 }

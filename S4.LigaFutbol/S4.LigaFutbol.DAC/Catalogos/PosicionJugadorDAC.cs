@@ -8,7 +8,7 @@ public class PosicionJugadorDAC : IPosicionJugadorDAC
         _conexion = ConnectionString;
     }
 
-    public async Task<bool> ActualizarPosicionesJugador(PosicionesJugador posicionesJugador, int IdUsuario)
+    public async Task<bool> ActualizarPosicionJugador(PosicionesJugador posicionesJugador, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
@@ -25,7 +25,7 @@ public class PosicionJugadorDAC : IPosicionJugadorDAC
         }
     }
 
-    public async Task<bool> EliminarPosicionesJugador(int IdPosicionJuagdor, int IdUsuario)
+    public async Task<bool> EliminarPosicionJugador(int IdPosicionJuagdor, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
@@ -38,7 +38,7 @@ public class PosicionJugadorDAC : IPosicionJugadorDAC
         }
     }
 
-    public async Task<int> InsertarPosicionesJugador(PosicionesJugador posicionesJugador, int IdUsuario)
+    public async Task<int> InsertarPosicionJugador(PosicionesJugador posicionesJugador, int IdUsuario)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {
@@ -52,7 +52,7 @@ public class PosicionJugadorDAC : IPosicionJugadorDAC
         }
     }
 
-    public async Task<List<PosicionesJugador>> ListaPosicionesJugador()
+    public async Task<List<PosicionesJugador>> ListaPosicionJugador()
     {
         List<PosicionesJugador> Lista = new List<PosicionesJugador>();
         try
@@ -70,7 +70,7 @@ public class PosicionJugadorDAC : IPosicionJugadorDAC
         }
     }
 
-    public async Task<PosicionesJugador> PosicionesJugador(int IdPosicionJuagdor)
+    public async Task<PosicionesJugador> PosicionJugador(int IdPosicionJuagdor)
     {
         using (var conexion = _conexion.ObtieneConexion())
         {

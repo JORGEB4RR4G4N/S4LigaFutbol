@@ -16,13 +16,14 @@ public class TipoPartidoController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<List<TiposPartido>> ListaTiposPartidos()
+    [Route("ListaTipoPartidos")]
+    public async Task<List<TiposPartido>> ListaTipoPartidos()
     {
         return await tipoPartidoRepositorio.ListaTipoPartido();
     }
     [HttpGet]
-    [Route("ObtieneTiposPartido/{IdTipoPartido}")]
-    public async Task<TiposPartido> TiposPartido(int IdTipoPartido)
+    [Route("ObtieneTipoPartido/{IdTipoPartido}")]
+    public async Task<TiposPartido> TipoPartido(int IdTipoPartido)
     {
         if (IdTipoPartido > 0)
             return await tipoPartidoRepositorio.TipoPartido(IdTipoPartido);
@@ -35,11 +36,13 @@ public class TipoPartidoController : ControllerBase
     }
 
     [HttpPost]
+    [Route("InsertaTipoPartido")]
     public async Task<TiposPartido> InsertaTipoPartido(TiposPartido tiposPartido)
     {
         return await tipoPartidoRepositorio.InsertarTipoPartido(tiposPartido, IdUsuario);
     }
     [HttpPut]
+    [Route("ActualizaTipoPartido")]
     public async Task<TiposPartido> ActualizaTipoPartido(TiposPartido tiposPartido)
     {
         if (tiposPartido == null)

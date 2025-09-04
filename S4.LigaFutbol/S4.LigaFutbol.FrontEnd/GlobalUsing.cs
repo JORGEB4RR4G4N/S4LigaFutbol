@@ -12,5 +12,9 @@ global using S4.LigaFutbol.Repositorio.Cliente.Catalogos.Extension;
 global using S4.LigaFutbol.Repositorio.Cliente.Estadisticas.Extension;
 global using S4.LigaFutbol.Repositorio.Cliente.Operacion.Extensiones;
 
+global using S4.LigaFutbol.Repositorio.Cliente.Catalogos.Interface;
+global using S4.LigaFutbol.Comunes.Catalogos;
+
+
 
 

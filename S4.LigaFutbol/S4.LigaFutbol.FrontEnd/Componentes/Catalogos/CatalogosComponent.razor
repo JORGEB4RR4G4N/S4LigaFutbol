@@ -6,22 +6,19 @@
         <CardBody>
             <Tabs SelectedTab="@selectedTab" SelectedTabChanged="@OnSelectedTabChanged" TabPosition="TabPosition.Top">
                 <Items>
-                    <Tab Name="home">Tipo Amonestaciones</Tab>
-                    <Tab Name="profile">Tipo Partido</Tab>
-                    <Tab Name="messages">Tipo Gol</Tab>
-                    <Tab Name="settings">Tipo Imagen</Tab>
+                    <Tab Name="TipoPartido">Tipo Partido</Tab>
+                    <Tab Name="TipoSancion">Tipo Sanción</Tab>
+                    <Tab Name="PosicionJugador">Posiciones Jugador</Tab>
                 </Items>
                 <Content>
-                    <TabPanel Name="home">
+
+                    <TabPanel Name="TipoPartido">
+                        <GridCatalogosComponent ListaTiposSancion="@ListaTiposSancion" />
+                    </TabPanel>
+                    <TabPanel Name="TipoSancion">
                         <GridCatalogosComponent />
                     </TabPanel>
-                    <TabPanel Name="profile">
-                        <GridCatalogosComponent />
-                    </TabPanel>
-                    <TabPanel Name="messages">
-                        <GridCatalogosComponent />
-                    </TabPanel>
-                    <TabPanel Name="settings">
+                    <TabPanel Name="PosicionJugador">
                         <GridCatalogosComponent />
                     </TabPanel>
                 </Content>

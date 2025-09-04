@@ -2,9 +2,9 @@
 
 public interface IClientePosicionJugador
 {
-    Task<PosicionesJugador> InsertarPosicionesJugador(PosicionesJugador posicionesJugador);
-    Task<PosicionesJugador> ActualizarPosicionesJugador(PosicionesJugador posicionesJugador);
-    Task<List<PosicionesJugador>> ListaPosicionesJugador();
-    Task<PosicionesJugador> PosicionesJugador(int IdPosicionJuagdor);
-    Task<bool> EliminarPosicionesJugador(int IdPosicionJuagdor);
+    Task<PosicionesJugador> InsertarPosicionJugador(PosicionesJugador posicionesJugador);
+    Task<PosicionesJugador> ActualizarPosicionJugador(PosicionesJugador posicionesJugador);
+    Task<List<PosicionesJugador>> ListaPosicionJugador();
+    Task<PosicionesJugador> PosicionJugador(int IdPosicionJuagdor);
+    Task<bool> EliminarPosicionJugador(int IdPosicionJuagdor);
 }

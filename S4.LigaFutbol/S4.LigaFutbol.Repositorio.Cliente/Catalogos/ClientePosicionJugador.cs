@@ -8,28 +8,28 @@ public class ClientePosicionJugador : IClientePosicionJugador
     {
         this.httpClient = httpClient;
     }
-    public async Task<PosicionesJugador> ActualizarPosicionesJugador(PosicionesJugador posicionesJugador)
+    public async Task<PosicionesJugador> ActualizarPosicionJugador(PosicionesJugador posicionesJugador)
     {
-        return await httpClient.PutAndReadJsonAsync("PosicionesJugador", posicionesJugador);
+        return await httpClient.PutAndReadJsonAsync("PosicionJugador", posicionesJugador);
     }
 
-    public async Task<bool> EliminarPosicionesJugador(int IdPosicionJuagdor)
+    public async Task<bool> EliminarPosicionJugador(int IdPosicionJuagdor)
     {
-        return await httpClient.DeleteAndReadJsonAsync<bool>($"PosicionesJugador/{IdPosicionJuagdor}");
+        return await httpClient.DeleteAndReadJsonAsync<bool>($"PosicionJugador/{IdPosicionJuagdor}");
     }
 
-    public async Task<PosicionesJugador> InsertarPosicionesJugador(PosicionesJugador posicionesJugador)
+    public async Task<PosicionesJugador> InsertarPosicionJugador(PosicionesJugador posicionesJugador)
     {
-        return await httpClient.PostAndReadJsonAsync("PosicionesJugador", posicionesJugador);
+        return await httpClient.PostAndReadJsonAsync("PosicionJugador", posicionesJugador);
     }
 
-    public async Task<List<PosicionesJugador>> ListaPosicionesJugador()
+    public async Task<List<PosicionesJugador>> ListaPosicionJugador()
     {
-        return await httpClient.GetFromJsonAsync<List<PosicionesJugador>>($"PosicionesJugador/ListaPosicionesJugador");
+        return await httpClient.GetFromJsonAsync<List<PosicionesJugador>>($"PosicionJugador/ListaPosicionJugador");
     }
 
-    public async Task<PosicionesJugador> PosicionesJugador(int IdPosicionJuagdor)
+    public async Task<PosicionesJugador> PosicionJugador(int IdPosicionJuagdor)
     {
-        return await httpClient.GetFromJsonAsync<PosicionesJugador>($"PosicionesJugador/{IdPosicionJuagdor}");
+        return await httpClient.GetFromJsonAsync<PosicionesJugador>($"PosicionJugador/{IdPosicionJuagdor}");
     }
 }

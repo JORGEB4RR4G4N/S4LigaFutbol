@@ -1,32 +1,17 @@
-﻿<Table>
-    <TableHeader ThemeContrast="ThemeContrast.Dark">
-        <TableRow>
-            <TableHeaderCell>#</TableHeaderCell>
-            <TableHeaderCell>First Name</TableHeaderCell>
-            <TableHeaderCell>Last Name</TableHeaderCell>
-            <TableHeaderCell>Username</TableHeaderCell>
-        </TableRow>
-    </TableHeader>
-    <TableBody>
-        <TableRow>
-            <TableRowHeader>1</TableRowHeader>
-            <TableRowCell>Mark</TableRowCell>
-            <TableRowCell>Otto</TableRowCell>
-            <TableRowCell>@@mdo</TableRowCell>
-        </TableRow>
-        <TableRow>
-            <TableRowHeader>2</TableRowHeader>
-            <TableRowCell>Jacob</TableRowCell>
-            <TableRowCell>Thornton</TableRowCell>
-            <TableRowCell>@@fat</TableRowCell>
-        </TableRow>
-        <TableRow>
-            <TableRowHeader>3</TableRowHeader>
-            <TableRowCell>Larry</TableRowCell>
-            <TableRowCell>the Bird</TableRowCell>
-            <TableRowCell>@@twitter</TableRowCell>
-        </TableRow>
-        
-    </TableBody>
-  
-</Table>
+﻿@if (ListaTiposSancion.Count() > 0)
+{
+
+    <DataGrid TItem="TiposSancion"
+              Data="@ListaTiposSancion"
+              @bind-SelectedRow="@TiposSancionSelected"
+              Responsive>
+        <DataGridCommandColumn />
+        <DataGridColumn Field="@nameof(TiposSancion.IdTipoSancion)" Caption="Id" Sortable="false" />
+        <DataGridColumn Field="@nameof(TiposSancion.Descripcion)" Caption="Descripcion" Editable />
+        <DataGridColumn Field="@nameof(TiposSancion.Nombre)" Caption="Nombre" Editable />
+        <DataGridColumn Field="@nameof(TiposSancion.Puntos)" Caption="Puntos" Editable />
+        <DataGridColumn Field="@nameof(TiposSancion.PuntosSuspension)" Caption="PuntosSuspension" Editable />
+
+    </DataGrid>
+}
+

@@ -16,16 +16,17 @@ public class PosicionJugadorController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<List<PosicionesJugador>> ListaPosicionesJugador()
+    [Route("ListaPosicionJugador")]
+    public async Task<List<PosicionesJugador>> ListaPosicionJugador()
     {
-        return await posicionJugadorRepositorio.ListaPosicionesJugador();
+        return await posicionJugadorRepositorio.ListaPosicionJugador();
     }
     [HttpGet]
     [Route("ObtienePosicionJugador/{IdPosicionJugador}")]
     public async Task<PosicionesJugador> PosicionJugador(int IdPosicionJugador)
     {
         if (IdPosicionJugador > 0)
-            return await posicionJugadorRepositorio.PosicionesJugador(IdPosicionJugador);
+            return await posicionJugadorRepositorio.PosicionJugador(IdPosicionJugador);
         else
         {
             logger.LogError("IdPosicionJugador no existe");
@@ -35,19 +36,21 @@ public class PosicionJugadorController : ControllerBase
     }
 
     [HttpPost]
+    [Route("InsertaPosicionJugador")]
     public async Task<PosicionesJugador> InsertaPosicionJugador(PosicionesJugador posicionesJugador)
     {
-        return await posicionJugadorRepositorio.InsertarPosicionesJugador(posicionesJugador, IdUsuario);
+        return await posicionJugadorRepositorio.InsertarPosicionJugador(posicionesJugador, IdUsuario);
     }
     [HttpPut]
-    public async Task<PosicionesJugador> ActualizaFalta(PosicionesJugador posicionesJugador)
+    [Route("ActualizarPosicionJugador")]
+    public async Task<PosicionesJugador> ActualizarPosicionJugador(PosicionesJugador posicionesJugador)
     {
         if (posicionesJugador == null)
             throw new Exception("No contienen informacion");
         if (posicionesJugador.IdPosicionJugador == 0)
             throw new Exception("No contienen el IdPosicionJugador para modificar el datos");
 
-        return await posicionJugadorRepositorio.ActualizarPosicionesJugador(posicionesJugador, IdUsuario);
+        return await posicionJugadorRepositorio.ActualizarPosicionJugador(posicionesJugador, IdUsuario);
     }
 
 }

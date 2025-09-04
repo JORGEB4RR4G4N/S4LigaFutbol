@@ -3,6 +3,6 @@ public interface IClienteTipoPartido
 {
     Task<TiposPartido> InsertarTipoPartido(TiposPartido tiposPartido);
     Task<TiposPartido> ActualizarTipoPartido(TiposPartido tiposPartido);
-    Task<List<TiposPartido>> ListaTipoPartido();
+    Task<List<TiposPartido>> ListaTipoPartidos();
     Task<TiposPartido> TipoPartido(int IdTipoPartido);
 }

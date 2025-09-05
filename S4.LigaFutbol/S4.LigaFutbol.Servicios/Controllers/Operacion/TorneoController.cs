@@ -1,5 +1,5 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Operacion;
-[Area("Operacion")]
+[Area("OperacionGeneral")]
 [ApiController]
 [Route("[area]/[controller]")]
 public class TorneoController : Controller
@@ -16,7 +16,8 @@ public class TorneoController : Controller
     }
 
     [HttpGet]
-    public async Task<List<Torneos>> ListaTorneos()
+    [Route("ListaTorneo")]
+    public async Task<List<Torneos>> ListaTorneo()
     {
         return await torneoRepositorio.ListaTorneo();
     }
@@ -35,11 +36,13 @@ public class TorneoController : Controller
     }
 
     [HttpPost]
+    [Route("InsertaTorneo")]
     public async Task<Torneos> InsertaTorneo(Torneos torneo)
     {
         return await torneoRepositorio.InsertarTorneo(torneo, IdUsuario);
     }
     [HttpPut]
+    [Route("ActualizaTorneo")]
     public async Task<Torneos> ActualizaTorneo(Torneos torneo)
     {
         if (torneo == null)

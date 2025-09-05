@@ -1,5 +1,5 @@
 ﻿<Column ColumnSize="ColumnSize.Is12">
-    <Card Height="Height.Px(500)">
+    <Card Height="Height.Px(600)">
         <CardHeader>
             <CardTitle>Catalogos </CardTitle>
         </CardHeader>
@@ -9,18 +9,27 @@
                     <Tab Name="TipoPartido">Tipo Partido</Tab>
                     <Tab Name="TipoSancion">Tipo Sanción</Tab>
                     <Tab Name="PosicionJugador">Posiciones Jugador</Tab>
+                    <Tab Name="FasesTorneo">Fase de Torneo</Tab>
+                    <Tab Name="Torneo">Torneo</Tab>
                 </Items>
                 <Content>
 
-                    <TabPanel Name="TipoPartido">
+                    <TabPanel Name="TipoPartido" Height="Height.Is100">
                         <GridCatalogosComponent ListaTiposSancion="@ListaTiposSancion" />
                     </TabPanel>
-                    <TabPanel Name="TipoSancion">
-                        <GridCatalogosComponent />
+                    <TabPanel Name="TipoSancion" Height="Height.Is100">
+                        <GridCatalogosComponent ListaTiposPartidos="@ListaTiposPartidos" />
                     </TabPanel>
-                    <TabPanel Name="PosicionJugador">
-                        <GridCatalogosComponent />
+                    <TabPanel Name="PosicionJugador" Height="Height.Is100">
+                        <GridCatalogosComponent ListaPosicionesJugadors="@ListaposicionesJugadors" />
                     </TabPanel>
+                    <TabPanel Name="FasesTorneo" Height="Height.Is100">
+                        <GridCatalogosComponent ListaFasesTorneoDTO="@ListaFaseTorneo" />
+                    </TabPanel>
+                    <TabPanel Name="Torneo" Height="Height.Is100">
+                        <GridCatalogosComponent ListaTorneo="@ListaTorneo" />
+                    </TabPanel>
+                    
                 </Content>
             </Tabs>
         </CardBody>

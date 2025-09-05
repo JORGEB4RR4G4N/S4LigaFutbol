@@ -23,8 +23,12 @@ public class ClienteFaseTorneo : IClienteFaseTorneo
         return await httpClient.PostAndReadJsonAsync("FasesTorneo", fasesTorneo);
     }
 
-    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo(int IdTorneo)
+    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo(int? IdTorneo)
     {
         return await httpClient.GetFromJsonAsync<List<FasesTorneoDTO>>($"FasesTorneo/ListaFasesTorneo/{IdTorneo}");
+    }
+    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo()
+    {
+        return await httpClient.GetFromJsonAsync<List<FasesTorneoDTO>>($"FasesTorneo/ListaFasesTorneo");
     }
 }

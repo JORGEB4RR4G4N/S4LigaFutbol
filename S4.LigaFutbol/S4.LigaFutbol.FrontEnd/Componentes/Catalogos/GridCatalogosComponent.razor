@@ -4,7 +4,9 @@
     <DataGrid TItem="TiposSancion"
               Data="@ListaTiposSancion"
               @bind-SelectedRow="@TiposSancionSelected"
-              Responsive>
+              Responsive
+              Virtualize
+              VirtualizeOptions="@virtualizeOptions">
         <DataGridCommandColumn />
         <DataGridColumn Field="@nameof(TiposSancion.IdTipoSancion)" Caption="Id" Sortable="false" />
         <DataGridColumn Field="@nameof(TiposSancion.Descripcion)" Caption="Descripcion" Editable />
@@ -14,4 +16,85 @@
 
     </DataGrid>
 }
+@if (ListaTiposPartidos.Count() > 0)
+{
 
+    <DataGrid TItem="TiposPartido"
+              Data="@ListaTiposPartidos"
+              @bind-SelectedRow="@TiposPartidoSelected"
+              Responsive
+              Virtualize
+              VirtualizeOptions="@virtualizeOptions">
+        <DataGridCommandColumn />
+        <DataGridColumn Field="@nameof(TiposPartido.IdTipoPartido)" Caption="Id" Sortable="false" />
+        <DataGridColumn Field="@nameof(TiposPartido.Descripcion)" Caption="Descripcion" Editable />
+        <DataGridColumn Field="@nameof(TiposPartido.Nombre)" Caption="Nombre" Editable />
+        <DataGridColumn Field="@nameof(TiposPartido.AfectaPosicion)" Caption="Afecta Posición" Editable />
+        <DataGridColumn Field="@nameof(TiposPartido.EsOficial)" Caption="Oficial" Editable />
+
+    </DataGrid>
+}
+@if (ListaPosicionesJugadors.Count() > 0)
+{
+
+    <DataGrid TItem="PosicionesJugador"
+              Data="@ListaPosicionesJugadors"
+              @bind-SelectedRow="@PosicionesJugadorsSelected"
+              Responsive
+              Virtualize
+              VirtualizeOptions="@virtualizeOptions">
+
+        <DataGridColumns>
+            <DataGridColumn Field="@nameof(PosicionesJugador.IdPosicionJugador)" Caption="Id" Sortable="false" />
+            <DataGridColumn Field="@nameof(PosicionesJugador.Nombre)" Caption="Nombre" Editable />
+            <DataGridColumn Field="@nameof(PosicionesJugador.Abreviatura)" Caption="Descripcion" Editable />
+        </DataGridColumns>
+    </DataGrid>
+}
+@if (ListaFasesTorneoDTO.Count() > 0)
+{
+
+    <DataGrid TItem="FasesTorneoDTO"
+              Data="@ListaFasesTorneoDTO"
+              @bind-SelectedRow="@FasesTorneoDTOSelected"
+              Responsive
+              RowOverlayBackground="Background.Success"
+              Virtualize
+              VirtualizeOptions="@virtualizeOptions">
+
+        <DataGridColumns>
+            <DataGridColumn Field="@nameof(FasesTorneoDTO.IdFase)" Caption="Id" Sortable="false" />
+            <DataGridColumn Field="@nameof(FasesTorneoDTO.NombreTorneo)" Caption="Torneo" Editable />
+            <DataGridColumn Field="@nameof(FasesTorneoDTO.NombreTorneo)" Caption="Fase" Editable />
+            <DataGridColumn Field="@nameof(FasesTorneoDTO.EsEliminatoriaTexto)" Caption="Eliminatoria" Editable />
+            <DataGridColumn Field="@nameof(FasesTorneoDTO.EquiposQueClasificanTexto)" Caption="Equipos que Clasifican" Editable />
+            <DataGridColumn Field="@nameof(FasesTorneoDTO.Orden)" Caption="Orden" Editable />
+        </DataGridColumns>
+    </DataGrid>
+}
+@if (ListaTorneo.Count() > 0)
+{
+
+    <DataGrid TItem="Torneos"
+              Data="@ListaTorneo"
+              @bind-SelectedRow="@TorneosSelected"
+              Responsive
+              Virtualize
+              VirtualizeOptions="@virtualizeOptions">
+
+        <DataGridColumns>
+            <DataGridColumn Field="@nameof(Torneos.Nombre)" Caption="Torneo" Editable />
+            <DataGridColumn Field="@nameof(Torneos.FechaIncio)" DisplayFormat="{0:dd/MM/yyyy}" Caption="Fecha Inicio" Editable />
+            <DataGridColumn Field="@nameof(Torneos.FechaFin)" DisplayFormat="{0:dd/MM/yyyy}" Caption="Fecha Fin" Editable />
+            <DataGridColumn Field="@nameof(Torneos.Habilitado)" DisplayFormat="" Caption="Activo" Editable>
+                <DisplayTemplate>
+                    @((bool)context.Habilitado
+                                    ? "Si"
+                                    : "No" )
+
+            </DisplayTemplate>
+        </DataGridColumn>
+
+        </DataGridColumns>
+    </DataGrid>
+}

@@ -38,7 +38,7 @@ public class FasesTorneoRepositorio : IFasesTorneoRepositorio
 
     }
 
-    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo(int IdTorneo)
+    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo(int? IdTorneo)
     {
         List<FasesTorneoDTO> ListafasesTorneoDTO = new List<FasesTorneoDTO>();
 

@@ -19,11 +19,11 @@ public class ClienteTorneo : IClienteTorneo
 
     public async Task<List<Torneos>> ListaTorneo()
     {
-        return await httpClient.GetFromJsonAsync<List<Torneos>>($"Partido/ListaTorneo");
+        return await httpClient.GetFromJsonAsync<List<Torneos>>($"Torneo/ListaTorneo");
     }
 
     public async Task<Torneos> Torneo(int IdTorneo)
     {
-        return await httpClient.GetFromJsonAsync<Torneos>($"Torneo/Torneo/{IdTorneo}");
+        return await httpClient.GetFromJsonAsync<Torneos>($"Torneo/ObtieneTorneo/{IdTorneo}");
     }
 }

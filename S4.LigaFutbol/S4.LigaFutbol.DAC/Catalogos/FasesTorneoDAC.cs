@@ -54,15 +54,16 @@ public class FasesTorneoDAC : IFasesTorneoDAC
         }
     }
 
-    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo(int IdTorneo)
+    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo(int? IdTorneo)
     {
         List<FasesTorneoDTO> Lista = new List<FasesTorneoDTO>();
         try
         {
             using (var conexion = _conexion.ObtieneConexion())
             {
-
-                Lista = (await conexion.QueryAsync<FasesTorneoDTO>("SP_FASE_CT", commandType: CommandType.StoredProcedure)).ToList();
+                var parametros = new DynamicParameters();
+                parametros.Add("@p_IdTorneo", IdTorneo, DbType.Int32);
+                Lista = (await conexion.QueryAsync<FasesTorneoDTO>("SP_FASE_CT",parametros, commandType: CommandType.StoredProcedure)).ToList();
             }
 
             return Lista;

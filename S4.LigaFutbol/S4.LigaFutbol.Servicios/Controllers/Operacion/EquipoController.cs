@@ -1,5 +1,5 @@
 ﻿namespace S4.LigaFutbol.Servicios.Controllers.Operacion;
-[Area("Operacion")]
+[Area("OperacionGeneral")]
 [ApiController]
 [Route("[area]/[controller]")]
 public class EquipoController : ControllerBase

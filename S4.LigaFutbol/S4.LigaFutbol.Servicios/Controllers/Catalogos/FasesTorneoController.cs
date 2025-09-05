@@ -16,7 +16,8 @@ public class FasesTorneoController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<List<FasesTorneoDTO>> ListaFasesTorneos(int IdTorneo)
+    [Route("ListaFasesTorneo/{IdTorneo?}")]
+    public async Task<List<FasesTorneoDTO>> ListaFasesTorneo(int? IdTorneo)
     {
         return await fasesTorneoRepositorio.ListaFasesTorneo(IdTorneo);
     }
@@ -35,11 +36,13 @@ public class FasesTorneoController : ControllerBase
     }
 
     [HttpPost]
+    [Route("InsertaFasesTorneo")]
     public async Task<FasesTorneo> InsertaFasesTorneo(FasesTorneo fasesTorneo)
     {
         return await fasesTorneoRepositorio.InsertarFaseTorneo(fasesTorneo, IdUsuario);
     }
     [HttpPut]
+    [Route("ActualizaFasesTorneo")]
     public async Task<FasesTorneo> ActualizaFasesTorneo(FasesTorneo fasesTorneo)
     {
         if (fasesTorneo == null)

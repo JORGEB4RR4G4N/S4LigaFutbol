@@ -27,4 +27,8 @@ public class ClienteEquipo : IClienteEquipo
     {
         return await httpClient.GetFromJsonAsync<List<EquiposDTO>>($"Equipo/ListaEquipo/{IdEquipo}/{IdTorneo}");
     }
+    public async Task<List<EquiposDTO>> ListaEquipo(int IdTorneo)
+    {
+        return await httpClient.GetFromJsonAsync<List<EquiposDTO>>($"Equipo/ListaEquipo/{IdTorneo}");
+    }
 }

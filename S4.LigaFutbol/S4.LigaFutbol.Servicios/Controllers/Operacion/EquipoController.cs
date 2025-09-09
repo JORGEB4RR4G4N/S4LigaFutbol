@@ -16,11 +16,11 @@ public class EquipoController : ControllerBase
     }
 
     [HttpGet]
-    [Route("ListaEquipo")]
-    public async Task<List<EquiposDTO>> ListaEquipo(int IdTorneo) => await equipoRepositorio.ListaEquipo(null, IdTorneo);
+    [Route("ListaEquipo/{IdTorneo}")]
+    public async Task<List<EquiposDTO>> ListaEquipo(int IdTorneo) => await equipoRepositorio.ListaEquipo(IdTorneo);
 
     [HttpGet]
-    [Route("Equipo")]
+    [Route("Equipo/{IdEquipo}")]
     public async Task<EquiposDTO> Equipo( int IdEquipo) => await equipoRepositorio.Equipo(IdEquipo);
 
     [HttpPost]

@@ -43,4 +43,10 @@ public class EquipoRepositorio : IEquipoRepositorio
         ListaequiposObjecto = await equipoDAC.ListaEquipo(IdEquipo, IdTorneo);
         return ListaequiposObjecto;
     }
+    public async Task<List<EquiposDTO>> ListaEquipo(int IdTorneo)
+    {
+        List<EquiposDTO> ListaequiposObjecto = new List<EquiposDTO>();
+        ListaequiposObjecto = await equipoDAC.ListaEquipo(IdTorneo);
+        return ListaequiposObjecto;
+    }
 }

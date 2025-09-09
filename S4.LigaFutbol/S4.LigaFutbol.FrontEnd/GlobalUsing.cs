@@ -18,6 +18,7 @@ global using S4.LigaFutbol.Repositorio.Cliente.Operacion.Interfaces;
 global using S4.LigaFutbol.Comunes.Catalogos;
 global using S4.LigaFutbol.Comunes.Catalogos.DTO;
 global using S4.LigaFutbol.Comunes.Operacion;
+global using S4.LigaFutbol.Comunes.Operacion.OperacionDTO;
 
 
 

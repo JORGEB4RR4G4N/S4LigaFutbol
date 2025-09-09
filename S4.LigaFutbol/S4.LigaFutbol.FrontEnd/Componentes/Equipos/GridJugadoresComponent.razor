@@ -1,0 +1,18 @@
+﻿@if (ListaJugadoresDTO.Count() > 0)
+{
+
+    <DataGrid TItem="JugadoresListadoDTO"
+              Data="@ListaJugadoresDTO.OrderBy(x => x.IdEquipo)"
+              @bind-SelectedRow="@JugadorDTOSelected"
+              Responsive
+              Virtualize
+              VirtualizeOptions="@virtualizeOptions">
+        <DataGridCommandColumn />
+        <DataGridColumn Field="@nameof(JugadoresListadoDTO.IdEquipo)" Caption="Id" Sortable="false" />
+        <DataGridColumn Field="@nameof(JugadoresListadoDTO.Nombre)" Caption="Jugador" Editable />
+        <DataGridColumn Field="@nameof(JugadoresListadoDTO.Numero)" Caption="Jugador" Editable />
+        <DataGridColumn Field="@nameof(JugadoresListadoDTO.Posicion)" Caption="Jugador" Editable />
+        <DataGridColumn Field="@nameof(JugadoresListadoDTO.Equipo)" Caption="Jugador" Editable />
+
+    </DataGrid>
+}

@@ -1,0 +1,62 @@
+﻿@if (ListaEquiposDTO.Count() > 0)
+{
+
+    <DataGrid TItem="EquiposDTO"
+              Data="@ListaEquiposDTO.OrderBy(x => x.IdEquipo)"
+              Responsive
+              Virtualize
+              VirtualizeOptions="@virtualizeOptions">
+        <DataGridColumn Field="@nameof(EquiposDTO.IdEquipo)" Caption="Id" Sortable="false" />
+        <DataGridColumn Field="@nameof(EquiposDTO.Nombre)" Caption="Equipo" Editable />
+        <DataGridColumn Caption="Acciones">
+            <DisplayTemplate Context="Equipos">
+
+                <Button Color="Color.Link" Clicked="() => SeleccionEquipos(Equipos.IdEquipo)">Ver Jugadores</Button>
+                <Button Color="Color.Primary" Clicked="() => SeleccionEquiposAcciones(Equipos, true)">Editar</Button>
+                <Button Color="Color.Danger" Clicked="() => SeleccionEquiposAcciones(Equipos, false)">Eliminar </Button>
+            </DisplayTemplate>
+
+        </DataGridColumn>
+
+    </DataGrid>
+}
+
+<Modal @ref="modalRef" Animated="true" AnimationDuration="150">
+    <ModalContent Size="ModalSize.Default" Centered="true">
+
+        <ModalHeader>
+            <ModalTitle>
+                @if (Edicion)
+                {
+
+
+                    <Label>Edición Equipo</Label>
+                }
+                else
+                {
+                    <Label> Eliminación de Equipos</Label>
+                }
+            </ModalTitle>
+        </ModalHeader>
+        <ModalBody>
+            @if (Edicion)
+            {
+                <Field Margin="Margin.Is2">
+                    <TextEdit Autofocus Placeholder="Nombre Equipo" @bind-Text="@NombreEquipoSeleccionado" />
+                </Field>
+            }
+            else
+            {
+                <Paragraph>
+                    ¿Estas seguro de Eliminar el Equipo: @NombreEquipoSeleccionado?
+                </Paragraph>
+            }
+        </ModalBody>
+        <ModalFooter>
+            <Button Color="Color.Secondary" Clicked="@HideModal">Cancelar</Button>
+            <Button Color="Color.Primary" Clicked="SeleccionEquipoEditar">Guardar Cambios</Button>
+        </ModalFooter>
+
+
+    </ModalContent>
+</Modal>

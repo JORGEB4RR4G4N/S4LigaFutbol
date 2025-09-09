@@ -1,3 +1,77 @@
-﻿<div>
+﻿<Column>
+    <Grid>
 
-</div>
+        <Column ColumnSize="ColumnSize.Is2">
+            <Div Padding="Padding.Is3">
+
+                <Alert Color="Color.Success" Visible Width="Width.Is100" TextAlignment="TextAlignment.Center">
+                    <AlertDescription TextAlignment="TextAlignment.Center">Torneos</AlertDescription>
+                </Alert>
+
+                <Divider />
+
+                <Card Shadow="Shadow.Large" Width="Width.Is100">
+                    <CardHeader>
+                        <CardTitle>Torneos </CardTitle>
+                    </CardHeader>
+                    <CardBody>
+                        <ListGroup Mode="ListGroupMode.Selectable"
+                                   @bind-SelectedItem="IdTorneoSeleccionado"
+                                   Width="Width.Is100">
+
+                            @if (ListaTorneo.Count > 0)
+                            {
+                                foreach (var Torneos in ListaTorneo)
+                                {
+                                    <ListGroupItem Name="@Torneos.IdTorneo.ToString()">
+                                        <Div Flex="Flex.JustifyContent.Between" Width="Width.Is100">
+                                            <Heading Size="HeadingSize.Is5" Margin="Margin.Is1.FromBottom">@Torneos.Nombre</Heading>
+                                            <Small><Badge Color="@(Torneos.Habilitado? Color.Success: Color.Danger)" Pill>@(Torneos.Habilitado ? "Si" : "No")</Badge></Small>
+                                        </Div>
+                                        <Paragraph Margin="Margin.Is1.FromBottom">@Torneos.FechaIncio.ToString("dd/MM/yyyy") - @Torneos.FechaFin.ToString("dd/MM/yyyy")</Paragraph>
+                                        <Small>14 Equipos</Small>
+                                    </ListGroupItem>
+                                }
+
+                            }
+                        </ListGroup>
+                    </CardBody>
+                </Card>
+
+
+            </Div>
+        </Column>
+        <Column ColumnSize="ColumnSize.Is5">
+
+            <Div Padding="Padding.Is3">
+                <Card Shadow="Shadow.Large" Width="Width.Is100">
+                    <CardHeader>
+                        <CardTitle>Equipos </CardTitle>
+                    </CardHeader>
+                    <CardBody>
+                        <GridEquiposComponent ListaEquiposDTO="@ListaEquiposDTOs" IdEquipo="CargaJugadores" />
+                    </CardBody>
+                </Card>
+
+            </Div>
+
+        </Column>
+        <Column ColumnSize="ColumnSize.Is5">
+
+            <Div Padding="Padding.Is3">
+                <Card Shadow="Shadow.Large" Width="Width.Is100" Height="Height.Is25">
+                    <CardHeader>
+                        <CardTitle>Jugadores </CardTitle>
+                    </CardHeader>
+                    <CardBody>
+                        <GridJugadoresComponent ListaJugadoresDTO="@ListaJugadoresDTO" />
+                    </CardBody>
+                </Card>
+
+            </Div>
+
+        </Column>
+
+
+    </Grid>
+</Column>

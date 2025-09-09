@@ -16,8 +16,8 @@ public class JugadorController : Controller
     }
 
     [HttpGet]
-    [Route("ListaJugadorPorTorneoEquipo")]
-    public async Task<List<JugadoresListadoDTO>> ListaJugadorPorTorneoEquipo([FromBody] int IdTorneo) => await jugadorRepositorio.ListaJugadorPorTorneoEquipo(IdTorneo, IdUsuario);
+    [Route("ListaJugadorPorTorneoEquipo/{IdTorneo}/{IdEquipo}")]
+    public async Task<List<JugadoresListadoDTO>> ListaJugadorPorTorneoEquipo(int IdTorneo,int IdEquipo) => await jugadorRepositorio.ListaJugadorPorTorneoEquipo(IdTorneo, IdEquipo);
 
     [HttpPost]
     public async Task<Jugadores> InsertaTorneo(Jugadores jugadores)

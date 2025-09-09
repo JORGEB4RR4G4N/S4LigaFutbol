@@ -70,4 +70,26 @@ public class EquipoDAC : IEquipoDAC
             return Lista;
         }
     }
+
+    public async Task<List<EquiposDTO>> ListaEquipo(int IdTorneo)
+    {
+        List<EquiposDTO> Lista = new List<EquiposDTO>();
+        try
+        {
+            using (var conexion = _conexion.ObtieneConexion())
+            {
+                var parametros = new DynamicParameters();
+                parametros.Add("@p_IdTorneo", IdTorneo, DbType.Int32);
+
+                Lista = (await conexion.QueryAsync<EquiposDTO>("SP_EQUIPO_CN", parametros, commandType: CommandType.StoredProcedure)).ToList();
+            }
+
+            return Lista;
+        }
+        catch
+        {
+            return Lista;
+        }
+    }
+
 }

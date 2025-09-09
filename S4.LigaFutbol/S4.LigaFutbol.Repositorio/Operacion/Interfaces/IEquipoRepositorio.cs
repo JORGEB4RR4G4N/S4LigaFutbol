@@ -5,5 +5,6 @@ public interface IEquipoRepositorio
     Task<EquiposDTO> InsertarEquipo(Equipos equipos, int IdUsuario);
     Task<EquiposDTO> ActualizarEquipo(Equipos equipos, int IdUsuario);
     Task<List<EquiposDTO>> ListaEquipo(int? IdEquipo, int? IdTorneo);
+    Task<List<EquiposDTO>> ListaEquipo(int IdTorneo);
     Task<EquiposDTO> Equipo(int IdEquipo);
 }

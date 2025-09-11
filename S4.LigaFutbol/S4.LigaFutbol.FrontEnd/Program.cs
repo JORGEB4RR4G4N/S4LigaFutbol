@@ -1,3 +1,5 @@
+using S4.LigaFutbol.FrontEnd.ServiciosHelper.Interfaces;
+
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
@@ -35,5 +37,7 @@ builder.Services.AddClientesCatalogos(apiUriCatalogos);
 builder.Services.AddClientesEstadistica(apiUriEstadisticas);
 builder.Services.AddClientesOperacion(apiUriOperacion);
 
+// Servicio componente Gloabal Toast
+builder.Services.AddScoped<IAppToasts, AppToasts>();
 
 await builder.Build().RunAsync();

@@ -7,6 +7,8 @@ global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using S4.LigaFutbol.FrontEnd;
 global using Blazorise.DataGrid;
 
+global using S4.LigaFutbol.FrontEnd.ServiciosHelper.Interfaces;
+
 global using S4.LigaFutbol.Comunes.Accesso;
 
 global using S4.LigaFutbol.Repositorio.Cliente.Catalogos.Extension;

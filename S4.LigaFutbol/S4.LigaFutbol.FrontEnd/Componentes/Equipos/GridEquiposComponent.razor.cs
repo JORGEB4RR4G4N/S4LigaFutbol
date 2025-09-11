@@ -4,9 +4,9 @@ public partial class GridEquiposComponent
 {
     [Parameter] public List<EquiposDTO> ListaEquiposDTO { get; set; } = new List<EquiposDTO>();
     [Parameter] public EventCallback<int> IdEquipo { get; set; }
-    [Parameter] public EventCallback<int> IdEquipoEliminar { get; set; }
+    [Parameter] public EventCallback<int> EquipoEliminar { get; set; }
     [Parameter] public EventCallback<EquiposDTO> EquipoEditar { get; set; }
-    public EquiposDTO EquiposDTO { get; set; } = new EquiposDTO();
+    public EquiposDTO EquiposDTOOSeleccionado { get; set; } = new EquiposDTO();
     protected string NombreEquipoSeleccionado { get; set; } = string.Empty;
     protected bool Edicion { get; set; }
     private VirtualizeOptions virtualizeOptions = new VirtualizeOptions { DataGridHeight = "400px" };
@@ -18,25 +18,21 @@ public partial class GridEquiposComponent
         }
 
     }
-    public async void SeleccionEquipoEliminar(int IdEquipoSeleccionado)
+    public async void SeleccionEquipoEditarEliminar()
     {
-        if (IdEquipoSeleccionado > 0)
+        if (Edicion)
         {
-            await IdEquipoEliminar.InvokeAsync(IdEquipoSeleccionado);
+            EquiposDTOOSeleccionado.Nombre = NombreEquipoSeleccionado;
+            await EquipoEditar.InvokeAsync(EquiposDTOOSeleccionado);
         }
-
-    }
-    public async void SeleccionEquipoEditar(EquiposDTO EquipoSeleccionado)
-    {
-        if (EquipoSeleccionado != null)
-        {
-            await EquipoEditar.InvokeAsync(EquipoSeleccionado);
-        }
+        else
+            await EquipoEliminar.InvokeAsync(EquiposDTOOSeleccionado.IdEquipo);
 
     }
 
     public void SeleccionEquiposAcciones(EquiposDTO EquipoSeleccionado, bool Editar)
     {
+        EquiposDTOOSeleccionado = EquipoSeleccionado;
         NombreEquipoSeleccionado = EquipoSeleccionado.Nombre;
         Edicion = Editar;
         ShowModal();
@@ -45,12 +41,14 @@ public partial class GridEquiposComponent
 
     private Modal modalRef;
 
-    private Task ShowModal()
+    private Task ShowModal() => modalRef.Show();
+
+    private Task HideModal() => modalRef.Hide();
+
+    private Task OnModalClosing(ModalClosingEventArgs e)
     {
-        return modalRef.Show();
-    }
-    private Task HideModal()
-    {
-        return modalRef.Hide();
+        // just set Cancel to prevent modal from closing
+        e.Cancel = e.CloseReason != CloseReason.EscapeClosing;
+        return Task.CompletedTask;
     }
 }

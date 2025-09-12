@@ -21,7 +21,7 @@
     </DataGrid>
 }
 
-<Modal @ref="modalRef" Animated="true" AnimationDuration="150" Closing="@OnModalClosing">
+<Modal @ref="modalRef" Visible=@ModalVisible  Animated="true" AnimationDuration="150" Closing="@OnModalClosing">
     <ModalContent Size="ModalSize.Default" Centered="true">
 
         <ModalHeader>
@@ -54,7 +54,7 @@
         </ModalBody>
         <ModalFooter>
             <Button Color="Color.Secondary" Clicked="@HideModal">Cancelar</Button>
-            <Button Color="Color.Primary" Clicked="()=>SeleccionEquipoEditarEliminar()">Guardar Cambios</Button>
+            <Button Color="Color.Primary" Clicked="() => SeleccionEquipoEditarEliminar()"> @(Edicion ? "Guardar cambios" : "Eliminar")</Button>
         </ModalFooter>
 
 

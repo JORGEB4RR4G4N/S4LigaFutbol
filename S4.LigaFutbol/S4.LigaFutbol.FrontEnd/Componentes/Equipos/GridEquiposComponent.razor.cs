@@ -6,9 +6,11 @@ public partial class GridEquiposComponent
     [Parameter] public EventCallback<int> IdEquipo { get; set; }
     [Parameter] public EventCallback<int> EquipoEliminar { get; set; }
     [Parameter] public EventCallback<EquiposDTO> EquipoEditar { get; set; }
+    [Parameter] public bool ModalVisible { get; set; } = false;
     public EquiposDTO EquiposDTOOSeleccionado { get; set; } = new EquiposDTO();
     protected string NombreEquipoSeleccionado { get; set; } = string.Empty;
     protected bool Edicion { get; set; }
+
     private VirtualizeOptions virtualizeOptions = new VirtualizeOptions { DataGridHeight = "400px" };
     public async void SeleccionEquipos(int IdEquipoSeleccionado)
     {
@@ -27,7 +29,6 @@ public partial class GridEquiposComponent
         }
         else
             await EquipoEliminar.InvokeAsync(EquiposDTOOSeleccionado.IdEquipo);
-
     }
 
     public void SeleccionEquiposAcciones(EquiposDTO EquipoSeleccionado, bool Editar)
@@ -35,7 +36,7 @@ public partial class GridEquiposComponent
         EquiposDTOOSeleccionado = EquipoSeleccionado;
         NombreEquipoSeleccionado = EquipoSeleccionado.Nombre;
         Edicion = Editar;
-        ShowModal();
+        ModalVisible = true;
 
     }
 

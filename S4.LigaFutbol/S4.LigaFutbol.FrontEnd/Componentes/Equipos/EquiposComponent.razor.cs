@@ -1,20 +1,15 @@
-﻿using Blazorise.LoadingIndicator;
-
-namespace S4.LigaFutbol.FrontEnd.Componentes.Equipos;
+﻿namespace S4.LigaFutbol.FrontEnd.Componentes.Equipos;
 
 public partial class EquiposComponent
 {
     [Inject] public IClienteEquipo clienteEquipo { get; set; }
     [Inject] public IClienteTorneo clienteTorneo { get; set; }
     [Inject] public IClienteJugador clienteJugador { get; set; }
-    [Inject] public IAppToasts appToasts { get; set; }
 
     public List<EquiposDTO> ListaEquiposDTOs { get; set; } = new List<EquiposDTO>();
     public List<Torneos> ListaTorneo { get; set; } = new List<Torneos>();
     public List<JugadoresListadoDTO> ListaJugadoresDTO { get; set; } = new List<JugadoresListadoDTO>();
     private string IdTorneoSeleccionado { get; set; }
-    private bool AccionExitosa { get; set; }
-    LoadingIndicator loadingIndicator;
 
     protected override async Task OnInitializedAsync()
     {
@@ -38,15 +33,12 @@ public partial class EquiposComponent
     }
     public async Task EliminarEquipo(int IdEquipo)
     {
-        await loadingIndicator.Show();
+
         EquiposDTO EquipoEiminar = new EquiposDTO() { IdEquipo = IdEquipo };
         ListaEquiposDTOs.RemoveAt(ListaEquiposDTOs.FindIndex(x => x.IdEquipo == IdEquipo));
         //var EquipoEliminado = await clienteEquipo.ActualizarEquipo(EquipoEiminar);
 
-        AccionExitosa = false;
-        await loadingIndicator.Hide();
 
-        await appToasts.Success("Accion Realizada", "Eliminado");
     }
 
 

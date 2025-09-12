@@ -11,7 +11,6 @@ public partial class GridEquiposComponent
     protected string NombreEquipoSeleccionado { get; set; } = string.Empty;
     protected bool Edicion { get; set; }
 
-    private VirtualizeOptions virtualizeOptions = new VirtualizeOptions { DataGridHeight = "400px" };
     public async void SeleccionEquipos(int IdEquipoSeleccionado)
     {
         if (IdEquipoSeleccionado > 0)
@@ -40,16 +39,6 @@ public partial class GridEquiposComponent
 
     }
 
-    private Modal modalRef;
 
-    private Task ShowModal() => modalRef.Show();
-
-    private Task HideModal() => modalRef.Hide();
-
-    private Task OnModalClosing(ModalClosingEventArgs e)
-    {
-        // just set Cancel to prevent modal from closing
-        e.Cancel = e.CloseReason != CloseReason.EscapeClosing;
-        return Task.CompletedTask;
-    }
+  
 }

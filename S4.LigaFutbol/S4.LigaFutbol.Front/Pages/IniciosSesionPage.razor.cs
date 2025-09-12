@@ -1,6 +1,6 @@
-﻿namespace S4.LigaFutbol.FrontEnd.Pages;
+﻿namespace S4.LigaFutbol.Front.Pages;
 
-public partial class InicioSesionPage
+public partial class IniciosSesionPage
 {
     [Inject] NavigationManager Nav { get; set; } = default!;
     public UsuarioAcceso usuarioAccesoObject { get; set; } = new UsuarioAcceso();

@@ -4,6 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+
+
+	  <PublishFluentIconAssets>true</PublishFluentIconAssets>
+	  <FluentIconSizes>10,12,16,20,24,28,32,48</FluentIconSizes>
+	  <FluentIconVariants>Filled,Regular</FluentIconVariants>
+	  <PublishFluentEmojiAssets>true</PublishFluentEmojiAssets>
+	  <FluentEmojiGroups>Activities,Animals_Nature,Flags,Food_Drink,Objects,People_Body,Smileys_Emotion,Symbols,Travel_Places</FluentEmojiGroups>
+	  <FluentEmojiStyles>Color,Flat,HighContrast</FluentEmojiStyles>
+	  
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +26,10 @@
   <ItemGroup>
     <ProjectReference Include="..\S4.LigaFutbol.Comunes\S4.LigaFutbol.Comunes.csproj" />
     <ProjectReference Include="..\S4.LigaFutbol.Repositorio.Cliente\S4.LigaFutbol.Repositorio.Cliente.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ServiciosHelper\Interfaces\" />
   </ItemGroup>
 
 </Project>

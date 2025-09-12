@@ -4,5 +4,5 @@ public partial class GridJugadoresComponent
 {
     [Parameter] public List<JugadoresListadoDTO> ListaJugadoresDTO { get; set; } = new List<JugadoresListadoDTO>();
     public JugadoresListadoDTO JugadorDTOSelected { get; set; } = new JugadoresListadoDTO();
-    private VirtualizeOptions virtualizeOptions = new VirtualizeOptions { DataGridHeight = "500px" };
+
 }

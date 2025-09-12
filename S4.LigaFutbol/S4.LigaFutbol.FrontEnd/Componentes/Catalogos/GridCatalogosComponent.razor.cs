@@ -15,6 +15,6 @@ public partial class GridCatalogosComponent
     public PosicionesJugador PosicionesJugadorsSelected { get; set; } = new PosicionesJugador();
     public FasesTorneoDTO FasesTorneoDTOSelected { get; set; } = new FasesTorneoDTO();
     public Torneos TorneosSelected { get; set; } = new Torneos();
-    private VirtualizeOptions virtualizeOptions = new VirtualizeOptions { DataGridHeight = "500px" };
+
 
 }

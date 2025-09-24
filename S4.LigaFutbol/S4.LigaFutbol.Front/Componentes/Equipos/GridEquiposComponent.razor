@@ -1,0 +1,22 @@
+﻿<FluentDataGrid Items=@ListaEquiposDTO
+                Virtualize="true"
+                DisplayMode="DataGridDisplayMode.Table"
+                Style="width: 100%;"
+                ItemSize="20"
+                GenerateHeader="@GenerateHeaderOption.Sticky"
+                Loading="@Cargando">
+    <ChildContent>
+        <PropertyColumn Width="25%" Property="@(c => c.Nombre)" Title="Equipo" Sortable="true" />
+
+        <TemplateColumn Title="Acciones" Align="@Align.End">
+            <FluentButton aria-label="Editar" IconEnd="@(new Icons.Regular.Size16.Edit())" />
+            <FluentButton aria-label="Eliminar" IconEnd="@(new Icons.Regular.Size16.Delete())" />
+        </TemplateColumn>
+    </ChildContent>
+    <EmptyContent>
+        <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+            <FluentIcon Value="@(new Icons.Filled.Size24.Crown())" Color="@Color.Accent" />
+            <div>No hay Datos</div>
+        </FluentStack>
+    </EmptyContent>
+</FluentDataGrid>

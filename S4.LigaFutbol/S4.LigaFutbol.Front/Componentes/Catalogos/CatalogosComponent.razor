@@ -1,0 +1,54 @@
+﻿<FluentGrid>
+    <FluentGridItem md="12">
+        <FluentCard>
+
+            <FluentHeader>
+                Header text
+            </FluentHeader>
+            <FluentDivider Orientation="Orientation.Horizontal" />
+
+            <br />
+            <FluentTabs @bind-ActiveTabId="@activeid" OnTabChange="HandleOnTabChange" Size="TabSize.Large">
+
+
+
+                <FluentTab Label="Tipo Partido" Icon="@(new Icons.Regular.Size24.LeafOne())" Id="tab-1">
+                    <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                        <FluentProgressRing Visible="CargandoDatos" />
+                    </FluentStack>
+
+                    <GridCatalogosComponent Cargando="CargandoDatos" ListaTiposPartidos="ListaTiposPartidos.AsQueryable()" />
+
+
+                </FluentTab>
+                <FluentTab Label="Tipo Sanciones" Id="tab-2">
+                    <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                        <FluentProgressRing Visible="CargandoDatos" />
+                    </FluentStack>
+                    <GridCatalogosComponent Cargando="CargandoDatos" ListaTiposSancion="ListaTiposSancion.AsQueryable()" />
+                </FluentTab>
+
+                <FluentTab Label="Posiciones Jugadores" Id="tab-3">
+                    <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                        <FluentProgressRing Visible="CargandoDatos" />
+                    </FluentStack>
+                    <GridCatalogosComponent Cargando="CargandoDatos" ListaPosicionesJugadors="ListaposicionesJugadors.AsQueryable()" />
+                </FluentTab>
+                <FluentTab Label="Torneos" Id="tab-4">
+                    <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                        <FluentProgressRing Visible="CargandoDatos" />
+                    </FluentStack>
+                    <GridCatalogosComponent Cargando="CargandoDatos" ListaTorneo="ListaTorneo.AsQueryable()" />
+                </FluentTab>
+                <FluentTab Label="Fases Torneo" Id="tab-5">
+                    <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                        <FluentProgressRing Visible="CargandoDatos" />
+                    </FluentStack>
+                    <GridCatalogosComponent Cargando="CargandoDatos" ListaFasesTorneoDTO="ListaFaseTorneo.AsQueryable()" />
+                </FluentTab>
+
+            </FluentTabs>
+
+        </FluentCard>
+    </FluentGridItem>
+</FluentGrid>

@@ -1,0 +1,35 @@
+﻿<PageTitle>Equipos</PageTitle>
+<FluentGrid>
+    <FluentGridItem md="3">
+        <FluentCard>
+            <div>
+                <p>
+                    Torneo
+                </p>
+            </div>
+            <div>
+                <FluentListbox Items="@ListaTorneo.AsEnumerable()"
+                               Multiple="false"
+                               SelectedOptionChanged="CargarEquipos">
+
+                    @*  <OptionTemplate>
+                    <FluentIcon Icon="Icons.Regular.Size16.Person" Slot="end" OnClick="@(() => CargarEquipos(context.IdTorneo))" />
+                    @context.Nombre
+                    </OptionTemplate> *@
+                </FluentListbox>
+
+
+            </div>
+        </FluentCard>
+    </FluentGridItem>
+    <FluentGridItem md="6">
+        <FluentCard>
+            <GridEquiposComponent Cargando="CargandoDatos" ListaEquiposDTO="ListaEquiposDTOs.AsQueryable()" />
+        </FluentCard>
+    </FluentGridItem>
+    <FluentGridItem md="3">
+        <div class="card">
+            md="12"
+        </div>
+    </FluentGridItem>
+</FluentGrid>

@@ -12,5 +12,6 @@ public partial class IniciosSesionPage
         // Redirige a la página Home
         Nav.NavigateTo("/PanelPrincipal");
 
+        Task.CompletedTask.Wait();
     }
 }

@@ -1,0 +1,146 @@
+﻿@if (ListaTiposSancion.Any())
+{
+    <div style="height: 400px; overflow-y: scroll;">
+        <FluentDataGrid Items=@ListaTiposSancion
+                        Virtualize="true"
+                        DisplayMode="DataGridDisplayMode.Table"
+                        Style="width: 100%;"
+                        ItemSize="20"
+                        GenerateHeader="@GenerateHeaderOption.Sticky"
+                        Loading="@Cargando">
+            <ChildContent>
+                <PropertyColumn Width="25%" Property="@(c => c.Descripcion)" Title="Descripcion" Sortable="true" />
+                <PropertyColumn Width="25%" Property="@(c => c.Nombre)" Title="Nombre" />
+                <PropertyColumn Width="25%" Property="@(c => c.PuntosSuspension)" Title="Puntos de suspencion" Align="Align.Center" />
+                <PropertyColumn Width="25%" Property="@(c => c.Puntos)" Title="Puntos" Align="Align.Center" />
+                <TemplateColumn Title="Acciones" Align="@Align.End">
+                    <FluentButton aria-label="Editar" IconEnd="@(new Icons.Regular.Size16.Edit())" />
+                    <FluentButton aria-label="Eliminar" IconEnd="@(new Icons.Regular.Size16.Delete())" />
+                </TemplateColumn>
+            </ChildContent>
+            <EmptyContent>
+                <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                    <FluentIcon Value="@(new Icons.Filled.Size24.Crown())" Color="@Color.Accent" />
+                    <div>Nothing to see here. Carry on!</div>
+                </FluentStack>
+            </EmptyContent>
+        </FluentDataGrid>
+    </div>
+}
+@if (ListaTiposPartidos.Any())
+{
+    <div style="height: 400px; overflow-y: scroll;">
+        <FluentDataGrid Items=@ListaTiposPartidos
+                        Virtualize="true"
+                        DisplayMode="DataGridDisplayMode.Table"
+                        Style="width: 100%;"
+                        ItemSize="20"
+                        GenerateHeader="@GenerateHeaderOption.Sticky"
+                        Loading="@Cargando">
+            <ChildContent>
+                <PropertyColumn Width="25%" Property="@(c => c.Descripcion)" Title="Descripcion" Sortable="true" />
+                <PropertyColumn Width="25%" Property="@(c => c.Nombre)" Title="Nombre" />
+                <PropertyColumn Width="25%" Property="@(c => c.AfectaPosicion)" Title="Afecta Posicion" Align="Align.Center" />
+                <PropertyColumn Width="25%" Property="@(c => c.EsOficial)" Title="Oficial" Align="Align.Center" />
+                <TemplateColumn Title="Acciones" Align="@Align.End">
+                    <FluentButton aria-label="Editar" IconEnd="@(new Icons.Regular.Size16.Edit())" />
+                    <FluentButton aria-label="Eliminar" IconEnd="@(new Icons.Regular.Size16.Delete())" />
+                </TemplateColumn>
+            </ChildContent>
+            <EmptyContent>
+                <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                    <FluentIcon Value="@(new Icons.Filled.Size24.Crown())" Color="@Color.Accent" />
+                    <div>Nothing to see here. Carry on!</div>
+                </FluentStack>
+            </EmptyContent>
+        </FluentDataGrid>
+    </div>
+}
+@if (ListaPosicionesJugadors.Any())
+{
+    <div style="height: 400px; overflow-y: scroll;">
+        <FluentDataGrid Items=@ListaPosicionesJugadors
+                        Virtualize="true"
+                        DisplayMode="DataGridDisplayMode.Table"
+                        Style="width: 100%;"
+                        ItemSize="20"
+                        GenerateHeader="@GenerateHeaderOption.Sticky"
+                        Loading="@Cargando">
+            <ChildContent>
+
+                <PropertyColumn Width="25%" Property="@(c => c.Nombre)" Title="Nombre" />
+                <PropertyColumn Width="25%" Property="@(c => c.Abreviatura)" Title="Abreviatura" Align="Align.Center" />
+                <TemplateColumn Title="Acciones" Align="@Align.End">
+                    <FluentButton aria-label="Editar" IconEnd="@(new Icons.Regular.Size16.Edit())" />
+                    <FluentButton aria-label="Eliminar" IconEnd="@(new Icons.Regular.Size16.Delete())" />
+                </TemplateColumn>
+            </ChildContent>
+            <EmptyContent>
+                <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                    <FluentIcon Value="@(new Icons.Filled.Size24.Crown())" Color="@Color.Accent" />
+                    <div>Nothing to see here. Carry on!</div>
+                </FluentStack>
+            </EmptyContent>
+        </FluentDataGrid>
+    </div>
+}
+@if (ListaTorneo.Any())
+{
+    <div style="height: 400px; overflow-y: scroll;">
+        <FluentDataGrid Items=@ListaTorneo
+                        Virtualize="true"
+                        DisplayMode="DataGridDisplayMode.Table"
+                        Style="width: 100%;"
+                        ItemSize="20"
+                        GenerateHeader="@GenerateHeaderOption.Sticky"
+                        Loading="@Cargando">
+            <ChildContent>
+                <PropertyColumn Width="25%" Property="@(c => c.Nombre)" Title="Descripcion" Sortable="true" />
+                <PropertyColumn Width="10%" Property="@(c => c.FechaIncio)" Format="dd-MM-yyy" Title="Fecha Inicio" />
+                <PropertyColumn Width="10%" Property="@(c => c.FechaFin)" Format="dd-MM-yyy" Title="Fecha Fin" Align="Align.Center" />
+                <PropertyColumn Width="20%" Property="@(c => c.Habilitado)" Title="Activo" Align="Align.Center" />
+                <TemplateColumn Title="Acciones" Align="@Align.End">
+                    <FluentButton aria-label="Editar" IconEnd="@(new Icons.Regular.Size16.Edit())" />
+                    <FluentButton aria-label="Eliminar" IconEnd="@(new Icons.Regular.Size16.Delete())" />
+                </TemplateColumn>
+            </ChildContent>
+            <EmptyContent>
+                <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                    <FluentIcon Value="@(new Icons.Filled.Size24.Crown())" Color="@Color.Accent" />
+                    <div>Nothing to see here. Carry on!</div>
+                </FluentStack>
+            </EmptyContent>
+        </FluentDataGrid>
+    </div>
+}
+
+@if (ListaFasesTorneoDTO.Any())
+{
+    <div style="height: 400px; overflow-y: scroll;">
+        <FluentDataGrid Items=@ListaFasesTorneoDTO
+                        Virtualize="true"
+                        DisplayMode="DataGridDisplayMode.Table"
+                        Style="width: 100%;"
+                        ItemSize="20"
+                        GenerateHeader="@GenerateHeaderOption.Sticky"
+                        Loading="@Cargando">
+            <ChildContent>
+                <PropertyColumn Width="25%" Property="@(c => c.NombreTorneo)" Title="Nombre Torneo" Sortable="true" />
+                <PropertyColumn Width="20%" Property="@(c => c.Nombre)" Title="Fase" />
+                <PropertyColumn Width="20%" Property="@(c => c.EquiposQueClasificanTexto)" Title="Equipos Clasifican" Align="Align.Center" />
+                <PropertyColumn Width="20%" Property="@(c => c.EsEliminatoriaTexto)" Title="Es Eliminatoria" Align="Align.Center" />
+                <PropertyColumn Width="20%" Property="@(c => c.Orden)" Title="Orden" Align="Align.Center" />
+                <TemplateColumn Title="Acciones" Align="@Align.End">
+                    <FluentButton aria-label="Editar" IconEnd="@(new Icons.Regular.Size16.Edit())" />
+                    <FluentButton aria-label="Eliminar" IconEnd="@(new Icons.Regular.Size16.Delete())" />
+                </TemplateColumn>
+            </ChildContent>
+            <EmptyContent>
+                <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="10">
+                    <FluentIcon Value="@(new Icons.Filled.Size24.Crown())" Color="@Color.Accent" />
+                    <div>Nothing to see here. Carry on!</div>
+                </FluentStack>
+            </EmptyContent>
+        </FluentDataGrid>
+    </div>
+}

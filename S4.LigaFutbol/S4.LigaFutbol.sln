@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.Comunes", "S4.LigaFutbol.Comunes\S4.LigaFutbol.Comunes.csproj", "{CF85C4A3-D013-4F1D-9B05-34E695567334}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S4.LigaFutbol.Comunes", "S4.LigaFutbol.Comunes\S4.LigaFutbol.Comunes.csproj", "{CF85C4A3-D013-4F1D-9B05-34E695567334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.DAC", "S4.LigaFutbol.DAC\S4.LigaFutbol.DAC.csproj", "{56EA6F51-70F8-4664-8A47-A304E187325E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S4.LigaFutbol.DAC", "S4.LigaFutbol.DAC\S4.LigaFutbol.DAC.csproj", "{56EA6F51-70F8-4664-8A47-A304E187325E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.Repositorio", "S4.LigaFutbol.Repositorio\S4.LigaFutbol.Repositorio.csproj", "{696BA868-B1B6-427E-922B-B69FF8768328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S4.LigaFutbol.Repositorio", "S4.LigaFutbol.Repositorio\S4.LigaFutbol.Repositorio.csproj", "{696BA868-B1B6-427E-922B-B69FF8768328}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.Servicios", "S4.LigaFutbol.Servicios\S4.LigaFutbol.Servicios.csproj", "{BA4FC4A5-F988-40B3-813D-9CB890B5709C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S4.LigaFutbol.Servicios", "S4.LigaFutbol.Servicios\S4.LigaFutbol.Servicios.csproj", "{BA4FC4A5-F988-40B3-813D-9CB890B5709C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.FrontEnd", "S4.LigaFutbol.FrontEnd\S4.LigaFutbol.FrontEnd.csproj", "{7A74421F-C634-4310-AAD1-D54057E1CB8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S4.LigaFutbol.FrontEnd", "S4.LigaFutbol.FrontEnd\S4.LigaFutbol.FrontEnd.csproj", "{7A74421F-C634-4310-AAD1-D54057E1CB8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.Repositorio.Cliente", "S4.LigaFutbol.Repositorio.Cliente\S4.LigaFutbol.Repositorio.Cliente.csproj", "{65535070-0271-4798-A72D-66BF15D50541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S4.LigaFutbol.Repositorio.Cliente", "S4.LigaFutbol.Repositorio.Cliente\S4.LigaFutbol.Repositorio.Cliente.csproj", "{65535070-0271-4798-A72D-66BF15D50541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S4.LigaFutbol.Front", "S4.LigaFutbol.Front\S4.LigaFutbol.Front.csproj", "{9FCFB6DF-6443-4EBF-847A-0D07FC28B099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S4.LigaFutbol.Front", "S4.LigaFutbol.Front\S4.LigaFutbol.Front.csproj", "{9FCFB6DF-6443-4EBF-847A-0D07FC28B099}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

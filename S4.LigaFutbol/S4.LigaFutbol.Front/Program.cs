@@ -1,4 +1,3 @@
-using Microsoft.FluentUI.AspNetCore.Components;
 using S4.LigaFutbol.Front;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
